@@ -17,7 +17,7 @@
 /* Header */
 .policies-header {
   margin-bottom: 50px;
-  text-align: left;
+  margin-left: 0;
 }
 
 .breadcrumb {
@@ -27,6 +27,7 @@
   color: #666666;
   margin-bottom: 15px;
   text-transform: uppercase;
+  margin-left: 0;
 }
 
 .policies-page-title {
@@ -42,14 +43,15 @@
   display: flex;
   gap: 80px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .policies-main {
   flex: 1;
   max-width: 650px;
+  margin: 0;
 }
 
 .policies-intro {
@@ -75,6 +77,8 @@
   color: #1a1a1a;
   margin-bottom: 25px;
   letter-spacing: 0;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 /* Policy Text */
