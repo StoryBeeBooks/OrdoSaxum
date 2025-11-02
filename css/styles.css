@@ -222,7 +222,9 @@ main {
   z-index: 2;
   text-align: left;
   color: #ffffff;
-  max-width: 600px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
   padding: 60px 80px;
 }
 
@@ -291,11 +293,12 @@ main {
 .slab-container {
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 80px;
 }
 
 .slab-content {
-  max-width: 900px;
-  margin: 0 auto 60px;
+  max-width: 100%;
+  margin: 0 0 60px 0;
   text-align: left;
 }
 
@@ -325,6 +328,8 @@ main {
   width: 100%;
   height: auto;
   display: block;
+  max-height: 800px;
+  object-fit: cover;
 }
 
 .slab-placeholder {
@@ -351,8 +356,8 @@ main {
    ============================================ */
 
 .carousel-section {
-  padding: 80px 40px;
-  background-color: #fafafa;
+  padding: 80px 80px;
+  background-color: #ffffff;
 }
 
 .carousel-container {
@@ -368,28 +373,36 @@ main {
 .carousel-track-container {
   overflow: hidden;
   width: 100%;
+  position: relative;
 }
 
 .carousel-track {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   transition: transform 0.5s ease-in-out;
+  will-change: transform;
 }
 
 .carousel-slide {
-  min-width: calc(25% - 11.25px);
+  min-width: calc(25% - 15px);
   flex-shrink: 0;
+  max-width: calc(25% - 15px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .carousel-image {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 1/1;
   background-color: #e8e8e8;
   overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .carousel-image img {
@@ -432,10 +445,12 @@ main {
   transition: all 0.3s ease;
   z-index: 10;
   backdrop-filter: blur(5px);
+  opacity: 0.7;
 }
 
 .carousel-arrow:hover {
   background-color: rgba(255, 255, 255, 0.9);
+  opacity: 1;
 }
 
 .carousel-prev {
@@ -751,7 +766,8 @@ footer {
   }
 
   .hero-content {
-    padding: 40px 30px;
+    padding: 40px 20px;
+    max-width: 100%;
   }
 
   .hero-title {
@@ -785,6 +801,10 @@ footer {
     padding: 50px 20px;
   }
 
+  .slab-container {
+    padding: 0 20px;
+  }
+
   .slab-content {
     margin-bottom: 40px;
   }
@@ -808,10 +828,20 @@ footer {
 
   .carousel-track {
     gap: 10px;
+    flex-wrap: wrap;
   }
 
   .carousel-slide {
     min-width: calc(50% - 5px);
+    max-width: calc(50% - 5px);
+  }
+  
+  .carousel-track-container {
+    overflow: visible;
+  }
+  
+  .carousel-arrow {
+    display: none;
   }
 
   .footer-content {
