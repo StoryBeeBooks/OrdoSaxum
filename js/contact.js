@@ -27,11 +27,28 @@ function toggleOffice(office) {
   const details = document.getElementById(office + '-details');
   const icon = document.getElementById(office + '-icon');
   
+  // Get all office details
+  const allOffices = ['toronto', 'richmond', 'markham', 'vaughan'];
+  
   if (details.classList.contains('active')) {
+    // Closing current office
     details.classList.remove('active');
     icon.classList.remove('rotated');
     icon.textContent = '▼';
   } else {
+    // Opening new office - close all others first
+    allOffices.forEach(officeId => {
+      const officeDetails = document.getElementById(officeId + '-details');
+      const officeIcon = document.getElementById(officeId + '-icon');
+      
+      if (officeDetails && officeDetails.classList.contains('active')) {
+        officeDetails.classList.remove('active');
+        officeIcon.classList.remove('rotated');
+        officeIcon.textContent = '▼';
+      }
+    });
+    
+    // Open the clicked office
     details.classList.add('active');
     icon.classList.add('rotated');
     icon.textContent = '▲';
