@@ -12,9 +12,6 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* Header */
@@ -22,7 +19,7 @@
   margin-bottom: 50px;
   text-align: left;
   width: 100%;
-  max-width: 1000px;
+  max-width: 100%;
 }
 
 .breadcrumb {
@@ -47,15 +44,16 @@
   display: flex;
   gap: 80px;
   align-items: flex-start;
-  justify-content: center;
-  max-width: 1400px;
-  margin: 0 auto;
+  justify-content: flex-start;
+  max-width: 100%;
+  margin: 0;
+  width: 100%;
 }
 
 .policies-main {
   flex: 1;
   max-width: 650px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .policies-intro {
