@@ -383,46 +383,49 @@ footer {
 .footer-content {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 60px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 80px;
+  align-items: flex-start;
 }
 
 .footer-section {
   display: flex;
-  gap: 40px;
+  gap: 50px;
 }
 
 .footer-links {
   display: flex;
-  gap: 30px;
+  gap: 25px;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .footer-link {
-  color: var(--primary-bg);
+  color: var(--secondary-text);
   text-decoration: none;
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .footer-link:hover {
-  color: #c9a961;
+  color: var(--primary-bg);
 }
 
 .footer-contact {
-  font-size: 12px;
-  line-height: 1.8;
+  font-size: 11px;
+  line-height: 1.9;
   color: var(--secondary-text);
+  text-align: right;
 }
 
 .footer-contact strong {
   color: var(--primary-bg);
+  font-weight: 600;
 }
 
 /* ============================================
