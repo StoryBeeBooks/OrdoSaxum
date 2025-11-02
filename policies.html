@@ -52,16 +52,18 @@
   <!-- POLICIES PAGE CONTENT -->
   <main class="policies-page">
     <div class="policies-container">
-      <h1 class="policies-page-title">Legal + Policies</h1>
+      <div class="policies-header">
+        <p class="breadcrumb">LEGAL + POLICIES</p>
+        <h1 class="policies-page-title">Cookie policy</h1>
+      </div>
 
-      <!-- Accessibility Policy -->
-      <div class="policy-section">
-        <div class="policy-header" onclick="togglePolicy('accessibility')">
-          <h2 class="policy-title">ACCESSIBILITY POLICY</h2>
-          <span class="toggle-icon" id="accessibility-icon">▼</span>
-        </div>
-        <div class="policy-content" id="accessibility-content">
-          <div class="policy-text">
+      <div class="policies-layout">
+        <!-- Main Content -->
+        <div class="policies-main">
+          <!-- Accessibility Policy -->
+          <section class="policy-section" id="accessibility">
+            <h2 class="policy-title">Accessibility Policy</h2>
+            <div class="policy-text">
             <p>OrdoSaxum is fundamentally committed to fostering an inclusive, diverse, and accessible environment. We believe in creating a vibrant culture where the unique skills, talents, and experiences of every individual are valued. This diversity is a cornerstone of our innovative approach and enables us to better serve our broad base of clients and partners. Our dedication to continuous improvement extends to ensuring that our services and workplace are accessible to all, including persons with disabilities.</p>
 
             <h3>Commitment to Accessibility</h3>
@@ -92,18 +94,12 @@
             </ul>
 
             <p>We will ensure that our feedback process is accessible to people with disabilities by providing or arranging for accessible formats and communication supports, on request. All feedback will be directed to the appropriate personnel and will be addressed promptly.</p>
-          </div>
-        </div>
-      </div>
+          </section>
 
-      <!-- Privacy Policy -->
-      <div class="policy-section">
-        <div class="policy-header" onclick="togglePolicy('privacy')">
-          <h2 class="policy-title">PRIVACY POLICY</h2>
-          <span class="toggle-icon" id="privacy-icon">▼</span>
-        </div>
-        <div class="policy-content" id="privacy-content">
-          <div class="policy-text">
+          <!-- Privacy Policy -->
+          <section class="policy-section" id="privacy">
+            <h2 class="policy-title">Privacy Policy</h2>
+            <div class="policy-text">
             <h3>Introduction</h3>
             <p>We respect your privacy and are committed to protecting it through our compliance with this privacy policy ("Policy"). This Policy describes the types of information we may collect from you or that you may provide ("Personal Information") on the OrdoSaxum brand website ("Website" or "Service") and any of its related products and services (collectively, "Services"), and our practices for collecting, using, maintaining, protecting, and disclosing that Personal Information. It also describes the choices available to you regarding our use of your Personal Information and how you can access and update this information.</p>
 
@@ -171,18 +167,12 @@
 
             <h3>Contacting Us</h3>
             <p>If you have any questions, concerns, or complaints regarding this Policy or the information we hold about you, please contact us.</p>
-          </div>
-        </div>
-      </div>
+          </section>
 
-      <!-- Terms and Conditions -->
-      <div class="policy-section">
-        <div class="policy-header" onclick="togglePolicy('terms')">
-          <h2 class="policy-title">TERMS AND CONDITIONS</h2>
-          <span class="toggle-icon" id="terms-icon">▼</span>
-        </div>
-        <div class="policy-content" id="terms-content">
-          <div class="policy-text">
+          <!-- Terms and Conditions -->
+          <section class="policy-section" id="terms">
+            <h2 class="policy-title">Terms and Conditions</h2>
+            <div class="policy-text">
             <h3>Introduction</h3>
             <p>Please read the following terms and conditions ("Terms") concerning the use of this website. By accessing, using, or downloading materials from this website, you agree to follow and be legally bound by these Terms. This is a legally binding agreement between you and the legal entity that owns and operates the OrdoSaxum brand ("we", "us", "our"). If you do not agree to these Terms, please do not use this website. We suggest you review this information carefully before using the site.</p>
 
@@ -228,18 +218,12 @@
 
             <h3>Contact Information</h3>
             <p>If you have any questions, concerns, or complaints regarding these Terms, we encourage you to contact us.</p>
-          </div>
-        </div>
-      </div>
+          </section>
 
-      <!-- Cookie Policy -->
-      <div class="policy-section">
-        <div class="policy-header" onclick="togglePolicy('cookie')">
-          <h2 class="policy-title">COOKIE POLICY</h2>
-          <span class="toggle-icon" id="cookie-icon">▼</span>
-        </div>
-        <div class="policy-content" id="cookie-content">
-          <div class="policy-text">
+          <!-- Cookie Policy -->
+          <section class="policy-section" id="cookie">
+            <h2 class="policy-title">Cookie Policy</h2>
+            <div class="policy-text">
             <h3>Introduction</h3>
             <p>The legal entity that owns and operates the OrdoSaxum brand ("we" or "us" or "our") may use cookies, web beacons, tracking pixels, and other tracking technologies when you visit our website, including any other media form, media channel, or mobile website related or connected thereto (collectively, the "Site") to help customize the Site and improve your experience.</p>
 
@@ -270,8 +254,18 @@
             <p>If you have questions or comments about this Cookie Policy, please contact us.</p>
 
             <p><strong>Location:</strong> Ontario, Canada</p>
-          </div>
+          </section>
         </div>
+
+        <!-- Sidebar Navigation -->
+        <aside class="policies-sidebar">
+          <nav class="sidebar-nav">
+            <a href="#cookie" class="sidebar-link">Cookie Policy</a>
+            <a href="#terms" class="sidebar-link">Terms Of Use</a>
+            <a href="#privacy" class="sidebar-link">Privacy Policy</a>
+            <a href="#accessibility" class="sidebar-link">Accessibility</a>
+          </nav>
+        </aside>
       </div>
 
     </div>

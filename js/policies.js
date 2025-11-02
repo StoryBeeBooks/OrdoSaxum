@@ -3,34 +3,23 @@
    ============================================ */
 
 /**
- * Toggle policy section
+ * Smooth scroll to policy sections
  */
-function togglePolicy(policyId) {
-  const content = document.getElementById(policyId + '-content');
-  const icon = document.getElementById(policyId + '-icon');
+document.addEventListener('DOMContentLoaded', function() {
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
   
-  // Get all policy sections
-  const allPolicies = ['accessibility', 'privacy', 'terms', 'cookie'];
-  
-  // If clicking on an already-open policy, do nothing (keep it open)
-  if (content.classList.contains('active')) {
-    return;
-  }
-  
-  // Opening new policy - close all others first
-  allPolicies.forEach(id => {
-    const policyContent = document.getElementById(id + '-content');
-    const policyIcon = document.getElementById(id + '-icon');
-    
-    if (policyContent && policyContent.classList.contains('active')) {
-      policyContent.classList.remove('active');
-      policyIcon.classList.remove('rotated');
-      policyIcon.textContent = '▼';
-    }
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
   });
-  
-  // Open the clicked policy
-  content.classList.add('active');
-  icon.classList.add('rotated');
-  icon.textContent = '▲';
-}
+});

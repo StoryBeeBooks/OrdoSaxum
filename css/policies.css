@@ -4,81 +4,71 @@
 
 .policies-page {
   min-height: 100vh;
-  background-color: #ffffff;
+  background-color: #fafafa;
   padding: 120px 20px 80px 20px;
 }
 
 .policies-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Header */
+.policies-header {
+  margin-bottom: 50px;
+}
+
+.breadcrumb {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #666666;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .policies-page-title {
   font-size: 2.5rem;
   font-weight: 300;
-  text-align: center;
-  margin-bottom: 60px;
   color: #1a1a1a;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0;
+}
+
+/* Layout */
+.policies-layout {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.policies-main {
+  flex: 1;
+  max-width: 750px;
 }
 
 /* Policy Section */
 .policy-section {
-  background-color: #ffffff;
-  margin-bottom: 20px;
-  border: 1px solid #e0e0e0;
+  margin-bottom: 60px;
+  scroll-margin-top: 140px;
 }
 
-.policy-header {
-  padding: 25px 40px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.2s ease;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.policy-header:hover {
-  background-color: #fafafa;
+.policy-section:last-child {
+  margin-bottom: 0;
 }
 
 .policy-title {
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
   color: #1a1a1a;
-  margin: 0;
+  margin-bottom: 25px;
+  letter-spacing: 0;
 }
 
-.toggle-icon {
-  font-size: 12px;
-  color: #666666;
-  transition: transform 0.3s ease;
-}
-
-.toggle-icon.rotated {
-  transform: rotate(180deg);
-}
-
-/* Policy Content */
-.policy-content {
-  background-color: #fafafa;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
-
-.policy-content.active {
-  max-height: 10000px;
-}
-
+/* Policy Text */
 .policy-text {
-  padding: 40px;
-  color: #4a4a4a;
-  line-height: 1.8;
+  color: #1a1a1a;
+  line-height: 1.9;
   font-size: 14px;
 }
 
@@ -88,7 +78,7 @@
   color: #1a1a1a;
   margin-top: 30px;
   margin-bottom: 15px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
 }
 
 .policy-text h3:first-child {
@@ -97,7 +87,7 @@
 
 .policy-text p {
   margin-bottom: 20px;
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 .policy-text p:last-child {
@@ -106,12 +96,12 @@
 
 .policy-text ul {
   margin: 20px 0;
-  padding-left: 30px;
+  padding-left: 25px;
 }
 
 .policy-text li {
   margin-bottom: 10px;
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 .policy-text strong {
@@ -120,43 +110,83 @@
 }
 
 .policy-text a {
-  color: #4a4a4a;
+  color: #1a1a1a;
   text-decoration: underline;
-  transition: color 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .policy-text a:hover {
+  opacity: 0.6;
+}
+
+/* Sidebar Navigation */
+.policies-sidebar {
+  position: sticky;
+  top: 140px;
+  min-width: 240px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-link {
+  font-size: 14px;
+  font-weight: 400;
   color: #1a1a1a;
+  text-decoration: none;
+  font-style: italic;
+  transition: opacity 0.3s ease;
+  line-height: 1.6;
+}
+
+.sidebar-link:hover {
+  opacity: 0.5;
 }
 
 /* Responsive */
+@media (max-width: 968px) {
+  .policies-layout {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .policies-sidebar {
+    position: static;
+    width: 100%;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .policies-page {
-    padding: 100px 15px 60px 15px;
+    padding: 100px 20px 60px 20px;
   }
 
   .policies-page-title {
     font-size: 2rem;
-    margin-bottom: 40px;
   }
 
-  .policy-header {
-    padding: 20px 25px;
-  }
-
-  .policy-text {
-    padding: 30px 25px;
+  .policy-section {
+    margin-bottom: 50px;
   }
 
   .policy-title {
-    font-size: 12px;
-  }
-
-  .policy-text h3 {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .policy-text {
     font-size: 13px;
+  }
+
+  .policy-text h3 {
+    font-size: 15px;
   }
 }
