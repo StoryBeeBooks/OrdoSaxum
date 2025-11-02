@@ -6,6 +6,64 @@
   background-color: #fafafa;
   padding: 120px 20px 80px 20px;
   flex: 1;
+  position: relative;
+}
+
+/* Background Images for Specific Policy Pages */
+.policies-page.accessibility-page {
+  background-image: url('../Image Assets/Background Pictures/accessibility.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.policies-page.cookie-page {
+  background-image: url('../Image Assets/Background Pictures/cookie.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.policies-page.legal-page {
+  background-image: url('../Image Assets/Background Pictures/Legal.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.policies-page.privacy-page {
+  background-image: url('../Image Assets/Background Pictures/privacy.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.policies-page.terms-page {
+  background-image: url('../Image Assets/Background Pictures/terms.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Add overlay for better text readability */
+.policies-page.accessibility-page::before,
+.policies-page.cookie-page::before,
+.policies-page.legal-page::before,
+.policies-page.privacy-page::before,
+.policies-page.terms-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  z-index: 0;
+}
+
+.policies-page .policies-container {
+  position: relative;
+  z-index: 1;
 }
 
 .policies-container {
