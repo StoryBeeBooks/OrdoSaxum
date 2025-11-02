@@ -1161,7 +1161,7 @@ footer {
   letter-spacing: 1px;
   color: #666666;
   text-align: center;
-  background: #f8f8f8;
+  background: transparent;
   margin: 0;
   font-style: italic;
 }
