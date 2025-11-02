@@ -134,59 +134,62 @@
 
 /* Location Details */
 .location-details {
-  padding: 0 40px 30px 40px;
   background-color: #fafafa;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.3s ease;
+  transition: max-height 0.5s ease;
 }
 
 .location-details.active {
   max-height: 1000px;
-  padding: 30px 40px;
 }
 
 .location-info {
+  padding: 30px 40px;
   color: #4a4a4a;
   line-height: 1.8;
 }
 
-.location-address {
-  margin: 0 0 12px 0;
-  font-size: 14px;
-}
-
-.location-address strong {
-  color: #1a1a1a;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 1px;
-}
-
-/* Make the address label inline so it doesn't appear as an isolated full-width row */
-.location-address strong {
-  display: inline-block;
-  margin-right: 8px;
-  text-transform: uppercase;
-}
-
-.location-hours {
+/* Info Row Structure */
+.info-row {
+  display: flex;
   margin-bottom: 25px;
+  align-items: flex-start;
 }
 
-.location-hours p {
-  margin-bottom: 15px;
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-label {
+  min-width: 110px;
   font-size: 11px;
-}
-
-.location-hours strong {
-  color: #1a1a1a;
   font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 1px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  padding-top: 2px;
+  flex-shrink: 0;
 }
 
+.info-content {
+  flex: 1;
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 1.8;
+}
+
+.info-content a {
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-content a:hover {
+  color: #1a1a1a;
+}
+
+/* Hours List */
 .hours-list {
   list-style: none;
   padding: 0;
@@ -194,7 +197,7 @@
 }
 
 .hours-list li {
-  padding: 8px 0;
+  padding: 6px 0;
   font-size: 13px;
   color: #4a4a4a;
   display: flex;
@@ -214,29 +217,6 @@
 
 .hours-list .time {
   color: #4a4a4a;
-}
-
-.location-phone {
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.location-phone strong {
-  color: #1a1a1a;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 1px;
-}
-
-.location-phone a {
-  color: #4a4a4a;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.location-phone a:hover {
-  color: #1a1a1a;
 }
 
 .coming-soon {
@@ -264,16 +244,21 @@
     padding: 20px 25px;
   }
 
-  .location-details {
-    padding: 0 25px 20px 25px;
-  }
-
-  .location-details.active {
+  .location-info {
     padding: 25px;
   }
 
   .location-office {
     font-size: 14px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .info-label {
+    margin-bottom: 8px;
   }
 
   .hours-list .day {
