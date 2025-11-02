@@ -1085,3 +1085,184 @@ footer {
     height: 2px;
   }
 }
+
+/* ============================================
+   FURNITURE VARIATIONS SECTION
+   ============================================ */
+
+.furniture-section {
+  background: #ffffff;
+  padding: 100px 80px;
+}
+
+.furniture-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.furniture-row {
+  margin-bottom: 80px;
+}
+
+.furniture-title {
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.furniture-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.furniture-track-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.furniture-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+.furniture-item {
+  min-width: calc(25% - 15px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.furniture-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.furniture-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.furniture-arrow {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #1a1a1a;
+  font-size: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.furniture-arrow:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.furniture-arrow:active {
+  transform: scale(0.95);
+}
+
+/* Action Buttons */
+.furniture-actions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.furniture-btn {
+  display: inline-block;
+  padding: 18px 60px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  border: 1px solid #1a1a1a;
+}
+
+.furniture-btn-customization {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-color: #1a1a1a;
+}
+
+.furniture-btn-customization:hover {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.furniture-btn-shop {
+  background: #1a1a1a;
+  color: #ffffff;
+  border-color: #1a1a1a;
+}
+
+.furniture-btn-shop:hover {
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .furniture-section {
+    padding: 80px 40px;
+  }
+  
+  .furniture-item {
+    min-width: calc(33.333% - 14px);
+  }
+}
+
+@media (max-width: 768px) {
+  .furniture-section {
+    padding: 60px 20px;
+  }
+  
+  .furniture-row {
+    margin-bottom: 60px;
+  }
+  
+  .furniture-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .furniture-item {
+    min-width: calc(50% - 10px);
+  }
+  
+  .furniture-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+  
+  .furniture-actions {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .furniture-btn {
+    padding: 16px 40px;
+    text-align: center;
+  }
+}

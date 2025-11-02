@@ -751,3 +751,64 @@ function initializeStoneMasonryAnimation() {
   animate();
 }
 
+/* ============================================
+   FURNITURE CAROUSELS
+   ============================================ */
+
+const furnitureCarousels = {
+  coffee: { currentSlide: 0, itemsToShow: 4 },
+  dining: { currentSlide: 0, itemsToShow: 4 },
+  accessories: { currentSlide: 0, itemsToShow: 4 }
+};
+
+function slideFurnitureCarousel(type, direction) {
+  const trackId = type + 'Track';
+  const track = document.getElementById(trackId);
+  
+  if (!track) return;
+  
+  const items = track.querySelectorAll('.furniture-item');
+  const totalItems = items.length;
+  
+  if (totalItems === 0) return;
+  
+  // Determine items to show based on viewport
+  let itemsToShow = furnitureCarousels[type].itemsToShow;
+  if (window.innerWidth <= 768) {
+    itemsToShow = 2;
+  } else if (window.innerWidth <= 1024) {
+    itemsToShow = 3;
+  }
+  
+  const maxSlide = Math.max(0, totalItems - itemsToShow);
+  
+  // Update current slide
+  furnitureCarousels[type].currentSlide += direction;
+  
+  // Boundary checks
+  if (furnitureCarousels[type].currentSlide < 0) {
+    furnitureCarousels[type].currentSlide = 0;
+  } else if (furnitureCarousels[type].currentSlide > maxSlide) {
+    furnitureCarousels[type].currentSlide = maxSlide;
+  }
+  
+  // Calculate offset
+  const itemWidth = items[0].offsetWidth;
+  const computedStyle = window.getComputedStyle(track);
+  const gap = parseInt(computedStyle.gap) || 20;
+  const offset = -(furnitureCarousels[type].currentSlide * (itemWidth + gap));
+  
+  track.style.transform = `translateX(${offset}px)`;
+}
+
+// Reset carousels on window resize
+window.addEventListener('resize', () => {
+  let resizeTimeout;
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    Object.keys(furnitureCarousels).forEach(type => {
+      furnitureCarousels[type].currentSlide = 0;
+      slideFurnitureCarousel(type, 0);
+    });
+  }, 250);
+});
