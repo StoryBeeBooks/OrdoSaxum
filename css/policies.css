@@ -47,6 +47,13 @@
   max-width: 750px;
 }
 
+.policies-intro {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #1a1a1a;
+  margin: 0;
+}
+
 /* Policy Section */
 .policy-section {
   margin-bottom: 60px;
@@ -144,6 +151,11 @@
 
 .sidebar-link:hover {
   opacity: 0.5;
+}
+
+.sidebar-link.active {
+  font-weight: 600;
+  opacity: 1;
 }
 
 /* Responsive */
