@@ -232,6 +232,29 @@
   color: #1a1a1a;
 }
 
+.location-email {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.location-email strong {
+  color: #1a1a1a;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.location-email a {
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.location-email a:hover {
+  color: #1a1a1a;
+}
+
 .coming-soon {
   color: #999999;
   font-style: italic;
