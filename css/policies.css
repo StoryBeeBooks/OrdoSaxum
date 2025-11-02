@@ -56,19 +56,55 @@
 
 .policies-intro {
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.8;
   color: #1a1a1a;
-  margin: 0;
+  margin: 0 0 20px 0;
+  font-weight: 400;
 }
 
 /* Policy Section */
 .policy-section {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   scroll-margin-top: 140px;
 }
 
 .policy-section:last-child {
   margin-bottom: 0;
+}
+
+.policy-section p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.policy-section p:last-child {
+  margin-bottom: 0;
+}
+
+.policy-section ul {
+  margin: 20px 0;
+  padding-left: 25px;
+  list-style-type: disc;
+}
+
+.policy-section li {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.policy-section li:last-child {
+  margin-bottom: 0;
+}
+
+.policy-section strong {
+  font-weight: 600;
+  color: #1a1a1a;
 }
 
 .policy-title {
@@ -79,13 +115,15 @@
   letter-spacing: 0;
   margin-left: 0;
   padding-left: 0;
+  line-height: 1.4;
 }
 
 /* Policy Text */
 .policy-text {
   color: #1a1a1a;
-  line-height: 1.9;
+  line-height: 1.8;
   font-size: 14px;
+  font-weight: 400;
 }
 
 .policy-text h3 {
@@ -95,6 +133,7 @@
   margin-top: 30px;
   margin-bottom: 15px;
   letter-spacing: 0;
+  line-height: 1.4;
 }
 
 .policy-text h3:first-child {
@@ -103,7 +142,8 @@
 
 .policy-text p {
   margin-bottom: 20px;
-  line-height: 1.9;
+  line-height: 1.8;
+  font-weight: 400;
 }
 
 .policy-text p:last-child {
@@ -113,11 +153,17 @@
 .policy-text ul {
   margin: 20px 0;
   padding-left: 25px;
+  list-style-type: disc;
 }
 
 .policy-text li {
-  margin-bottom: 10px;
-  line-height: 1.9;
+  margin-bottom: 12px;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.policy-text li:last-child {
+  margin-bottom: 0;
 }
 
 .policy-text strong {
