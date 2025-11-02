@@ -37,7 +37,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0;
@@ -192,6 +192,8 @@ body {
   align-items: flex-end;
   justify-content: flex-start;
   overflow: hidden;
+  margin-top: -120px;
+  padding-top: 120px;
 }
 
 .hero-video {
