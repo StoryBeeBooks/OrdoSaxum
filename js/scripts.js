@@ -251,5 +251,363 @@ function initializeCarousel() {
 // Add carousel initialization to DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
   initializeCarousel();
+  initializeStoneMasonryAnimation();
 });
+
+/* ============================================
+   ELEGANT PARTICLE FLOW ANIMATION (THREE.JS)
+   ============================================ */
+
+function initializeStoneMasonryAnimation() {
+  const container = document.getElementById('stoneBlocksAnimation');
+  const canvas = document.getElementById('canvas3d');
+  if (!container || !canvas || typeof THREE === 'undefined') return;
+
+  // Scene setup
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf5f5f5);
+  scene.fog = new THREE.Fog(0xf5f5f5, 20, 50);
+  
+  const camera = new THREE.PerspectiveCamera(
+    60,
+    container.clientWidth / container.clientHeight,
+    0.1,
+    100
+  );
+  camera.position.set(0, 5, 15);
+  camera.lookAt(0, 0, 0);
+
+  const renderer = new THREE.WebGLRenderer({ 
+    canvas: canvas,
+    antialias: true,
+    alpha: true 
+  });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  // Elegant lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+  scene.add(ambientLight);
+
+  const mainLight = new THREE.DirectionalLight(0xffffff, 0.8);
+  mainLight.position.set(10, 10, 10);
+  scene.add(mainLight);
+
+  const accentLight = new THREE.PointLight(0xffd700, 0.5, 30);
+  accentLight.position.set(-5, 5, 5);
+  scene.add(accentLight);
+
+  // Create particle system
+  const particleCount = 2000;
+  const particles = [];
+  
+  // Particle geometry and material
+  const particleGeometry = new THREE.SphereGeometry(0.05, 8, 8);
+  const particleMaterials = [
+    new THREE.MeshStandardMaterial({ 
+      color: 0xe8e8e8,
+      roughness: 0.3,
+      metalness: 0.2,
+      emissive: 0xffffff,
+      emissiveIntensity: 0.1
+    }),
+    new THREE.MeshStandardMaterial({ 
+      color: 0xd4c4b0,
+      roughness: 0.4,
+      metalness: 0.1,
+      emissive: 0xffd700,
+      emissiveIntensity: 0.05
+    }),
+    new THREE.MeshStandardMaterial({ 
+      color: 0xc8c8c8,
+      roughness: 0.3,
+      metalness: 0.3,
+      emissive: 0xffffff,
+      emissiveIntensity: 0.08
+    })
+  ];
+
+  // Define countertop shape (target positions for particles)
+  const countertopShape = [];
+  
+  // Main countertop surface
+  for (let x = -6; x <= 6; x += 0.3) {
+    for (let z = -2; z <= 2; z += 0.3) {
+      countertopShape.push({
+        x: x,
+        y: 0,
+        z: z
+      });
+    }
+  }
+
+  // Create particles with random starting positions
+  for (let i = 0; i < particleCount; i++) {
+    const material = particleMaterials[Math.floor(Math.random() * particleMaterials.length)].clone();
+    const particle = new THREE.Mesh(particleGeometry, material);
+    
+    // Random starting position (scattered in space)
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.random() * Math.PI;
+    const radius = 15 + Math.random() * 10;
+    
+    particle.position.set(
+      radius * Math.sin(phi) * Math.cos(theta),
+      radius * Math.sin(phi) * Math.sin(theta),
+      radius * Math.cos(phi)
+    );
+    
+    // Target position (on countertop)
+    if (i < countertopShape.length) {
+      particle.userData.target = new THREE.Vector3(
+        countertopShape[i].x,
+        countertopShape[i].y + (Math.random() - 0.5) * 0.2,
+        countertopShape[i].z
+      );
+    } else {
+      // Extra particles orbit around
+      particle.userData.target = new THREE.Vector3(
+        (Math.random() - 0.5) * 20,
+        (Math.random() - 0.5) * 10,
+        (Math.random() - 0.5) * 20
+      );
+    }
+    
+    particle.userData.velocity = new THREE.Vector3();
+    particle.userData.delay = Math.random() * 1000;
+    particle.userData.speed = 0.02 + Math.random() * 0.03;
+    particle.userData.orbitSpeed = (Math.random() - 0.5) * 0.001;
+    particle.userData.phase = Math.random() * Math.PI * 2;
+    
+    scene.add(particle);
+    particles.push(particle);
+  }
+
+  // Create the formed countertop (appears after particles settle)
+  const countertopGeometry = new THREE.BoxGeometry(12, 0.3, 4);
+  const countertopMaterial = new THREE.MeshStandardMaterial({
+    color: 0xe8e8e8,
+    roughness: 0.2,
+    metalness: 0.3,
+    transparent: true,
+    opacity: 0
+  });
+  const countertop = new THREE.Mesh(countertopGeometry, countertopMaterial);
+  countertop.position.set(0, 0, 0);
+  scene.add(countertop);
+
+  // Add white/grey edges to the countertop
+  const edgesGeometry = new THREE.EdgesGeometry(countertopGeometry);
+  const edgesMaterial = new THREE.LineBasicMaterial({ 
+    color: 0xffffff, 
+    linewidth: 2,
+    transparent: true,
+    opacity: 0
+  });
+  const edges = new THREE.LineSegments(edgesGeometry, edgesMaterial);
+  countertop.add(edges);
+
+  // Animation state
+  let animationStarted = false;
+  let animationTime = 0;
+  let formationComplete = false;
+  let userCanRotate = false;
+  
+  // Mouse interaction variables
+  let isDragging = false;
+  let previousMousePosition = { x: 0, y: 0 };
+  let countertopRotation = { x: 0, y: 0 };
+
+  // Mouse event listeners for rotation
+  canvas.addEventListener('mousedown', (e) => {
+    if (userCanRotate) {
+      isDragging = true;
+      previousMousePosition = { x: e.clientX, y: e.clientY };
+    }
+  });
+
+  canvas.addEventListener('mousemove', (e) => {
+    if (isDragging && userCanRotate) {
+      const deltaX = e.clientX - previousMousePosition.x;
+      const deltaY = e.clientY - previousMousePosition.y;
+      
+      countertopRotation.y += deltaX * 0.01;
+      countertopRotation.x += deltaY * 0.01;
+      
+      // Limit vertical rotation
+      countertopRotation.x = Math.max(-Math.PI / 4, Math.min(Math.PI / 4, countertopRotation.x));
+      
+      previousMousePosition = { x: e.clientX, y: e.clientY };
+    }
+  });
+
+  canvas.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  canvas.addEventListener('mouseleave', () => {
+    isDragging = false;
+  });
+
+  // Touch events for mobile
+  canvas.addEventListener('touchstart', (e) => {
+    if (userCanRotate && e.touches.length === 1) {
+      isDragging = true;
+      previousMousePosition = { 
+        x: e.touches[0].clientX, 
+        y: e.touches[0].clientY 
+      };
+    }
+  });
+
+  canvas.addEventListener('touchmove', (e) => {
+    if (isDragging && userCanRotate && e.touches.length === 1) {
+      e.preventDefault();
+      const deltaX = e.touches[0].clientX - previousMousePosition.x;
+      const deltaY = e.touches[0].clientY - previousMousePosition.y;
+      
+      countertopRotation.y += deltaX * 0.01;
+      countertopRotation.x += deltaY * 0.01;
+      
+      countertopRotation.x = Math.max(-Math.PI / 4, Math.min(Math.PI / 4, countertopRotation.x));
+      
+      previousMousePosition = { 
+        x: e.touches[0].clientX, 
+        y: e.touches[0].clientY 
+      };
+    }
+  });
+
+  canvas.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+
+  // Animation loop
+  function animate() {
+    requestAnimationFrame(animate);
+
+    if (animationStarted) {
+      animationTime += 16;
+
+      particles.forEach((particle, i) => {
+        const elapsed = animationTime - particle.userData.delay;
+        
+        if (elapsed > 0 && particle.material.opacity > 0) {
+          // Calculate direction to target
+          const direction = new THREE.Vector3()
+            .subVectors(particle.userData.target, particle.position)
+            .normalize();
+          
+          const distance = particle.position.distanceTo(particle.userData.target);
+          
+          // Add flowing, organic movement
+          const flowOffset = new THREE.Vector3(
+            Math.sin(animationTime * 0.001 + particle.userData.phase) * 0.5,
+            Math.cos(animationTime * 0.001 + particle.userData.phase * 1.3) * 0.5,
+            Math.sin(animationTime * 0.001 + particle.userData.phase * 0.7) * 0.5
+          );
+          
+          // Smooth velocity - back to original speed
+          particle.userData.velocity.lerp(
+            direction.multiplyScalar(particle.userData.speed).add(flowOffset.multiplyScalar(0.02)),
+            0.1
+          );
+          
+          particle.position.add(particle.userData.velocity);
+          
+          // Gentle rotation
+          particle.rotation.x += particle.userData.orbitSpeed;
+          particle.rotation.y += particle.userData.orbitSpeed * 1.3;
+          
+          // Enhanced shimmer effect - brighten as they approach
+          if (particle.material.emissiveIntensity !== undefined) {
+            const proximityGlow = Math.max(0, 1 - (distance / 10));
+            particle.material.emissiveIntensity = 
+              0.05 + Math.sin(animationTime * 0.003 + i * 0.1) * 0.1 + proximityGlow * 0.3;
+          }
+          
+          // When particles get very close to target, start fading them
+          if (distance < 0.8) {
+            const fadeProgress = 1 - (distance / 0.8);
+            particle.material.opacity = 1 - fadeProgress;
+            particle.scale.setScalar(1 - fadeProgress * 0.5); // Shrink as they fade
+            
+            // Start materializing the countertop as particles arrive
+            if (countertop.material.opacity < 1) {
+              countertop.material.opacity += 0.002;
+              edges.material.opacity += 0.002; // Fade in edges with countertop
+            }
+          }
+          
+          // After countertop is fully formed, gently fade any remaining particles
+          if (countertop.material.opacity >= 0.99 && particle.material.opacity > 0) {
+            particle.material.opacity = Math.max(0, particle.material.opacity - 0.005);
+            particle.scale.multiplyScalar(0.98);
+            
+            // Enable user rotation once particles are gone
+            if (!userCanRotate && particle.material.opacity <= 0.01) {
+              userCanRotate = true;
+              canvas.style.cursor = 'grab';
+            }
+          }
+        }
+      });
+
+      // Continue fading countertop in smoothly
+      if (animationTime > 2500 && countertop.material.opacity < 1) {
+        countertop.material.opacity = Math.min(1, countertop.material.opacity + 0.008);
+        edges.material.opacity = Math.min(1, edges.material.opacity + 0.008);
+      }
+      
+      // Apply user rotation if enabled
+      if (userCanRotate) {
+        countertop.rotation.x += (countertopRotation.x - countertop.rotation.x) * 0.1;
+        countertop.rotation.y += (countertopRotation.y - countertop.rotation.y) * 0.1;
+        
+        // Update cursor
+        canvas.style.cursor = isDragging ? 'grabbing' : 'grab';
+      }
+
+      // Camera movement (only before user interaction)
+      if (!userCanRotate) {
+        const cameraTime = animationTime * 0.0002;
+        camera.position.x = Math.sin(cameraTime) * 3;
+        camera.position.y = 5 + Math.sin(cameraTime * 0.7) * 1;
+        camera.lookAt(0, 0, 0);
+
+        // Accent light movement
+        accentLight.position.x = Math.cos(animationTime * 0.001) * 8;
+        accentLight.position.z = Math.sin(animationTime * 0.001) * 8;
+      }
+    }
+
+    renderer.render(scene, camera);
+  }
+
+  // Start animation when visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animationStarted) {
+        animationStarted = true;
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  observer.observe(container);
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+  });
+
+  // Start animation loop
+  animate();
+}
 

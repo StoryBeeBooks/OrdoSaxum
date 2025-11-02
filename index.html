@@ -38,7 +38,7 @@
         </p>
       </div>
       <div class="slab-image">
-        <img src="Image Assets/slab-inspiration.jpg" alt="Stone Slab Design" class="slab-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <img src="Image Assets/Fireplace/fireplace4.jpeg" alt="Stone Slab Design" class="slab-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <div class="slab-placeholder" style="display: none;">DESIGN INSPIRATION</div>
         <p class="slab-caption">Design / Inspiration</p>
       </div>
@@ -124,8 +124,29 @@
       </div>
     </div>
   </section>
+
+  <!-- STONE MASONRY ANIMATION SECTION -->
+  <section class="masonry-animation-section">
+    <div class="masonry-container">
+      <div class="masonry-content">
+        <h2 class="masonry-title">Crafted to Perfection</h2>
+        <p class="masonry-subtitle">Where Nature Meets Artistry</p>
+      </div>
+      
+      <div class="stone-blocks-animation" id="stoneBlocksAnimation">
+        <!-- Three.js 3D animation canvas -->
+        <canvas id="canvas3d"></canvas>
+      </div>
+      
+      <div class="masonry-text">
+        <p>We transform premium natural stone and sintered slabs into stunning countertops that elevate your space. From selection to installation, every detail is crafted with precision and expertise.</p>
+      </div>
+    </div>
+  </section>
+
   <div id="footer-placeholder"></div>
 
+  <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
   <script src="js/scripts.js"></script>
 </body>
 </html>
