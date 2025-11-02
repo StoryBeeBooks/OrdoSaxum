@@ -383,16 +383,6 @@ function initializeDisplayCarousel() {
     }
   });
   
-  // Mouse wheel navigation
-  carousel.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    
-    if (e.deltaY > 0) {
-      nextSlide();
-    } else {
-      prevSlide();
-    }
-  }, { passive: false });
 }
 
 /* ============================================
@@ -727,17 +717,6 @@ function initializeStoneMasonryAnimation() {
         canvas.style.cursor = isDragging ? 'grabbing' : 'grab';
       }
 
-      // Camera movement (only before user interaction)
-      if (!userCanRotate) {
-        const cameraTime = animationTime * 0.0002;
-        camera.position.x = Math.sin(cameraTime) * 3;
-        camera.position.y = 5 + Math.sin(cameraTime * 0.7) * 1;
-        camera.lookAt(0, 0, 0);
-
-        // Accent light movement
-        accentLight.position.x = Math.cos(animationTime * 0.001) * 8;
-        accentLight.position.z = Math.sin(animationTime * 0.001) * 8;
-      }
     }
 
     renderer.render(scene, camera);
