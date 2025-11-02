@@ -291,14 +291,12 @@ main {
 .slab-container {
   max-width: 1400px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
 }
 
 .slab-content {
-  padding: 40px 0;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-align: left;
 }
 
 .slab-title {
@@ -320,6 +318,7 @@ main {
 .slab-image {
   position: relative;
   width: 100%;
+  max-width: 100%;
 }
 
 .slab-img {
@@ -330,7 +329,7 @@ main {
 
 .slab-placeholder {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   background-color: #e8e8e8;
   display: flex;
   align-items: center;
@@ -782,22 +781,37 @@ footer {
   }
 
   /* Slab Section Responsive */
-  .slab-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .slab-section {
+    padding: 50px 20px;
   }
 
-  .slab-text h2 {
-    font-size: 1.5rem;
+  .slab-content {
+    margin-bottom: 40px;
+  }
+
+  .slab-title {
+    font-size: 12px;
+  }
+
+  .slab-description {
+    font-size: 13px;
   }
 
   /* Carousel Responsive */
+  .carousel-section {
+    padding: 50px 20px;
+  }
+
+  .carousel-wrapper {
+    padding: 0 40px;
+  }
+
   .carousel-track {
     gap: 10px;
   }
 
   .carousel-slide {
-    flex: 0 0 calc(50% - 5px);
+    min-width: calc(50% - 5px);
   }
 
   .footer-content {
