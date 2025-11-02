@@ -156,52 +156,104 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    ============================================ */
 
 let currentSlide = 0;
-const slidesToShow = 4;
+const slidesToShow = 4; // Desktop default
+let autoPlayInterval;
 
 function slideCarousel(direction) {
   const track = document.getElementById('carouselTrack');
+  if (!track) return;
+  
   const slides = track.querySelectorAll('.carousel-slide');
   const totalSlides = slides.length;
-  const maxSlide = totalSlides - slidesToShow;
   
-  currentSlide += direction;
+  if (totalSlides === 0) return;
   
-  // Loop back to start/end
-  if (currentSlide < 0) {
-    currentSlide = maxSlide;
-  } else if (currentSlide > maxSlide) {
-    currentSlide = 0;
+  // Determine how many slides to show based on viewport
+  let visibleSlides = slidesToShow;
+  if (window.innerWidth <= 768) {
+    visibleSlides = 2; // Mobile/Tablet: show 2
   }
   
+  const maxSlide = Math.max(0, totalSlides - visibleSlides);
+  
+  // Update current slide
+  currentSlide += direction;
+  
+  // Boundary checks
+  if (currentSlide < 0) {
+    currentSlide = 0;
+  } else if (currentSlide > maxSlide) {
+    currentSlide = maxSlide;
+  }
+  
+  // Calculate offset
   const slideWidth = slides[0].offsetWidth;
-  const gap = 15; // Match CSS gap
+  const computedStyle = window.getComputedStyle(track);
+  const gap = parseInt(computedStyle.gap) || 15;
   const offset = -(currentSlide * (slideWidth + gap));
   
   track.style.transform = `translateX(${offset}px)`;
 }
 
-// Auto-play carousel (optional)
-let autoPlayInterval;
-
+// Auto-play functionality
 function startAutoPlay() {
+  stopAutoPlay(); // Clear any existing interval
   autoPlayInterval = setInterval(() => {
+    const track = document.getElementById('carouselTrack');
+    if (!track) return;
+    
+    const slides = track.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    
+    let visibleSlides = slidesToShow;
+    if (window.innerWidth <= 768) {
+      visibleSlides = 2;
+    }
+    
+    const maxSlide = Math.max(0, totalSlides - visibleSlides);
+    
+    // If at the end, loop back to start
+    if (currentSlide >= maxSlide) {
+      currentSlide = -1; // Will become 0 after slideCarousel(1)
+    }
+    
     slideCarousel(1);
   }, 5000); // Change slide every 5 seconds
 }
 
 function stopAutoPlay() {
-  clearInterval(autoPlayInterval);
+  if (autoPlayInterval) {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = null;
+  }
 }
 
-// Start auto-play when page loads
-document.addEventListener('DOMContentLoaded', function() {
-  startAutoPlay();
-  
-  // Pause on hover
+// Initialize carousel on page load
+function initializeCarousel() {
   const carouselWrapper = document.querySelector('.carousel-wrapper');
   if (carouselWrapper) {
+    // Start auto-play
+    startAutoPlay();
+    
+    // Pause on hover
     carouselWrapper.addEventListener('mouseenter', stopAutoPlay);
     carouselWrapper.addEventListener('mouseleave', startAutoPlay);
+    
+    // Recalculate on window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        // Reset to first slide on resize
+        currentSlide = 0;
+        slideCarousel(0);
+      }, 250);
+    });
   }
+}
+
+// Add carousel initialization to DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+  initializeCarousel();
 });
 
