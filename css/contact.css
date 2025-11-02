@@ -152,7 +152,7 @@
 }
 
 .location-address {
-  margin-bottom: 25px;
+  margin: 0 0 12px 0;
   font-size: 14px;
 }
 
@@ -162,6 +162,13 @@
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 1px;
+}
+
+/* Make the address label inline so it doesn't appear as an isolated full-width row */
+.location-address strong {
+  display: inline-block;
+  margin-right: 8px;
+  text-transform: uppercase;
 }
 
 .location-hours {
