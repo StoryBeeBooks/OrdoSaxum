@@ -4,13 +4,31 @@
 
 .contact-page {
   min-height: 100vh;
-  background-color: #f8f8f8;
+  background-image: url('../Image Assets/ContactUsBackground.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   padding: 120px 20px 80px 20px;
+  position: relative;
+}
+
+.contact-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 0;
 }
 
 .contact-container {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-page-title {
@@ -134,6 +152,7 @@
 }
 
 .location-address {
+  display: none;
   margin-bottom: 25px;
   font-size: 14px;
 }
