@@ -232,12 +232,8 @@ function stopAutoPlay() {
 function initializeCarousel() {
   const carouselWrapper = document.querySelector('.carousel-wrapper');
   if (carouselWrapper) {
-    // Start auto-play
-    startAutoPlay();
-    
-    // Pause on hover
-    carouselWrapper.addEventListener('mouseenter', stopAutoPlay);
-    carouselWrapper.addEventListener('mouseleave', startAutoPlay);
+    // Auto-play disabled per user request
+    // startAutoPlay();
     
     // Recalculate on window resize
     let resizeTimeout;
