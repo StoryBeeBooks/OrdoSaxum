@@ -11,11 +11,13 @@
 .policies-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 
 /* Header */
 .policies-header {
   margin-bottom: 50px;
+  text-align: left;
 }
 
 .breadcrumb {
@@ -40,11 +42,14 @@
   display: flex;
   gap: 80px;
   align-items: flex-start;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .policies-main {
   flex: 1;
-  max-width: 750px;
+  max-width: 650px;
 }
 
 .policies-intro {
