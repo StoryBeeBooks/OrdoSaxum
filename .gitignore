@@ -1,0 +1,24 @@
+# Node modules
+node_modules/
+.npm
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Optional npm files
+.npmrc
+
+# Environment
+.env
+.env.local
