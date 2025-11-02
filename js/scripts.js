@@ -14,6 +14,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
+ * Toggle mobile menu
+ */
+function toggleMenu() {
+  const navMenu = document.getElementById('navMenu');
+  const hamburger = document.querySelector('.hamburger');
+  
+  navMenu.classList.toggle('active');
+  hamburger.classList.toggle('active');
+}
+
+/**
  * Initialize navigation interactivity
  */
 function initializeNavigation() {
@@ -21,6 +32,15 @@ function initializeNavigation() {
   
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
+      // Close mobile menu when clicking a link
+      const navMenu = document.getElementById('navMenu');
+      const hamburger = document.querySelector('.hamburger');
+      
+      if (navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+      }
+      
       // If link is just '#' or empty href, prevent default
       if (this.getAttribute('href') === '#') {
         e.preventDefault();
