@@ -31,26 +31,28 @@ function toggleOffice(office) {
   const allOffices = ['toronto', 'richmond', 'markham', 'vaughan'];
   
   if (details.classList.contains('active')) {
-    // Keep the current office open when clicking again
-    return;
-  }
-
-  // Opening new office - close all others first
-  allOffices.forEach(officeId => {
-    const officeDetails = document.getElementById(officeId + '-details');
-    const officeIcon = document.getElementById(officeId + '-icon');
+    // Closing current office
+    details.classList.remove('active');
+    icon.classList.remove('rotated');
+    icon.textContent = '▼';
+  } else {
+    // Opening new office - close all others first
+    allOffices.forEach(officeId => {
+      const officeDetails = document.getElementById(officeId + '-details');
+      const officeIcon = document.getElementById(officeId + '-icon');
+      
+      if (officeDetails && officeDetails.classList.contains('active')) {
+        officeDetails.classList.remove('active');
+        officeIcon.classList.remove('rotated');
+        officeIcon.textContent = '▼';
+      }
+    });
     
-    if (officeDetails && officeDetails.classList.contains('active')) {
-      officeDetails.classList.remove('active');
-      officeIcon.classList.remove('rotated');
-      officeIcon.textContent = '▼';
-    }
-  });
-  
-  // Open the clicked office
-  details.classList.add('active');
-  icon.classList.add('rotated');
-  icon.textContent = '▲';
+    // Open the clicked office
+    details.classList.add('active');
+    icon.classList.add('rotated');
+    icon.textContent = '▲';
+  }
 }
 
 // Initialize - Toronto office open by default
