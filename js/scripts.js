@@ -319,8 +319,20 @@ function initializeDisplayCarousel() {
     
     const deltaX = e.clientX - startX;
     
+    // If user dragged significantly
     if (hasMoved && Math.abs(deltaX) > 50) {
       if (deltaX > 0) {
+        prevSlide();
+      } else {
+        nextSlide();
+      }
+    } else if (!hasMoved) {
+      // If it was just a click (no drag), check position
+      const carouselWidth = carousel.offsetWidth;
+      const clickX = e.clientX - carousel.getBoundingClientRect().left;
+      
+      // Click on left half = previous, click on right half = next
+      if (clickX < carouselWidth / 2) {
         prevSlide();
       } else {
         nextSlide();
@@ -496,11 +508,11 @@ function initializeStoneMasonryAnimation() {
         countertopShape[i].z
       );
     } else {
-      // Extra particles orbit around
+      // Extra particles target nearby space
       particle.userData.target = new THREE.Vector3(
-        (Math.random() - 0.5) * 20,
-        (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 20
+        (Math.random() - 0.5) * 15,
+        (Math.random() - 0.5) * 8,
+        (Math.random() - 0.5) * 10
       );
     }
     
@@ -639,73 +651,63 @@ function initializeStoneMasonryAnimation() {
           
           const distance = particle.position.distanceTo(particle.userData.target);
           
-          // Determine if this particle is part of the countertop or just floating
-          const isFloatingParticle = i >= countertopShape.length;
+          // Add flowing, organic movement
+          const flowOffset = new THREE.Vector3(
+            Math.sin(animationTime * 0.001 + particle.userData.phase) * 0.5,
+            Math.cos(animationTime * 0.001 + particle.userData.phase * 1.3) * 0.5,
+            Math.sin(animationTime * 0.001 + particle.userData.phase * 0.7) * 0.5
+          );
           
-          if (!isFloatingParticle) {
-            // Particles that form the countertop
-            const flowOffset = new THREE.Vector3(
-              Math.sin(animationTime * 0.001 + particle.userData.phase) * 0.5,
-              Math.cos(animationTime * 0.001 + particle.userData.phase * 1.3) * 0.5,
-              Math.sin(animationTime * 0.001 + particle.userData.phase * 0.7) * 0.5
-            );
-            
-            particle.userData.velocity.lerp(
-              direction.multiplyScalar(particle.userData.speed).add(flowOffset.multiplyScalar(0.02)),
-              0.1
-            );
-            
-            particle.position.add(particle.userData.velocity);
-            
-            // When particles get very close to target, start fading them
-            if (distance < 0.8) {
-              const fadeProgress = 1 - (distance / 0.8);
-              particle.material.opacity = 1 - fadeProgress;
-              particle.scale.setScalar(1 - fadeProgress * 0.5);
-              
-              // Start materializing the countertop as particles arrive
-              if (countertop.material.opacity < 1) {
-                countertop.material.opacity += 0.002;
-                edges.material.opacity += 0.002;
-              }
-            }
-          } else {
-            // Floating particles - gentle orbital movement around the countertop
-            const time = animationTime * 0.0005;
-            const orbitRadius = 8 + Math.sin(particle.userData.phase) * 2;
-            const orbitSpeed = particle.userData.orbitSpeed * 200;
-            
-            particle.position.x = Math.cos(time + particle.userData.phase) * orbitRadius;
-            particle.position.y = Math.sin(time * 1.5 + particle.userData.phase * 1.3) * 3 + 2;
-            particle.position.z = Math.sin(time + particle.userData.phase) * orbitRadius;
-            
-            // Keep them semi-transparent and shimmering
-            particle.material.opacity = 0.3 + Math.sin(animationTime * 0.002 + i * 0.1) * 0.15;
-          }
+          // Smooth velocity
+          particle.userData.velocity.lerp(
+            direction.multiplyScalar(particle.userData.speed).add(flowOffset.multiplyScalar(0.02)),
+            0.1
+          );
           
-          // Gentle rotation for all particles
+          particle.position.add(particle.userData.velocity);
+          
+          // Gentle rotation
           particle.rotation.x += particle.userData.orbitSpeed;
           particle.rotation.y += particle.userData.orbitSpeed * 1.3;
           
-          // Enhanced shimmer effect
-          if (particle.material.emissiveIntensity !== undefined && !isFloatingParticle) {
+          // Enhanced shimmer effect - brighten as they approach
+          if (particle.material.emissiveIntensity !== undefined) {
             const proximityGlow = Math.max(0, 1 - (distance / 10));
             particle.material.emissiveIntensity = 
               0.05 + Math.sin(animationTime * 0.003 + i * 0.1) * 0.1 + proximityGlow * 0.3;
           }
+          
+          // When particles get very close to target, start fading them
+          if (distance < 0.8) {
+            const fadeProgress = 1 - (distance / 0.8);
+            particle.material.opacity = 1 - fadeProgress;
+            particle.scale.setScalar(1 - fadeProgress * 0.5);
+            
+            // Start materializing the countertop as particles arrive
+            if (countertop.material.opacity < 1) {
+              countertop.material.opacity += 0.002;
+              edges.material.opacity += 0.002;
+            }
+          }
+          
+          // After countertop is fully formed, fade any remaining particles
+          if (countertop.material.opacity >= 0.99 && particle.material.opacity > 0) {
+            particle.material.opacity = Math.max(0, particle.material.opacity - 0.005);
+            particle.scale.multiplyScalar(0.98);
+          }
         }
       });
+      
+      // Continue fading countertop in smoothly
+      if (animationTime > 2500 && countertop.material.opacity < 1) {
+        countertop.material.opacity = Math.min(1, countertop.material.opacity + 0.008);
+        edges.material.opacity = Math.min(1, edges.material.opacity + 0.008);
+      }
       
       // Enable user rotation once countertop is fully formed
       if (countertop.material.opacity >= 0.99 && !userCanRotate) {
         userCanRotate = true;
         canvas.style.cursor = 'grab';
-      }
-
-      // Continue fading countertop in smoothly
-      if (animationTime > 2500 && countertop.material.opacity < 1) {
-        countertop.material.opacity = Math.min(1, countertop.material.opacity + 0.008);
-        edges.material.opacity = Math.min(1, edges.material.opacity + 0.008);
       }
       
       // Apply user rotation if enabled
