@@ -385,8 +385,16 @@ function initializeStoneMasonryAnimation() {
 
   // Create the formed countertop (appears after particles settle)
   const countertopGeometry = new THREE.BoxGeometry(12, 0.3, 4);
+  
+  // Load texture from slab image
+  const textureLoader = new THREE.TextureLoader();
+  const slabTexture = textureLoader.load('Image Assets/slab1.jpg'); // Use slab1.jpg (lighter) or slab2.jpg (darker)
+  slabTexture.wrapS = THREE.RepeatWrapping;
+  slabTexture.wrapT = THREE.RepeatWrapping;
+  slabTexture.repeat.set(2, 1); // Adjust repeat for better tiling
+  
   const countertopMaterial = new THREE.MeshStandardMaterial({
-    color: 0xe8e8e8,
+    map: slabTexture,
     roughness: 0.2,
     metalness: 0.3,
     transparent: true,
