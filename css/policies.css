@@ -147,15 +147,19 @@
   font-style: italic;
   transition: opacity 0.3s ease;
   line-height: 1.6;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .sidebar-link:hover {
   opacity: 0.5;
+  text-decoration: underline;
 }
 
 .sidebar-link.active {
   font-weight: 600;
   opacity: 1;
+  pointer-events: none;
 }
 
 /* Responsive */
