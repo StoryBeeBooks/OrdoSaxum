@@ -150,3 +150,58 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+/* ============================================
+   CAROUSEL FUNCTIONALITY
+   ============================================ */
+
+let currentSlide = 0;
+const slidesToShow = 4;
+
+function slideCarousel(direction) {
+  const track = document.getElementById('carouselTrack');
+  const slides = track.querySelectorAll('.carousel-slide');
+  const totalSlides = slides.length;
+  const maxSlide = totalSlides - slidesToShow;
+  
+  currentSlide += direction;
+  
+  // Loop back to start/end
+  if (currentSlide < 0) {
+    currentSlide = maxSlide;
+  } else if (currentSlide > maxSlide) {
+    currentSlide = 0;
+  }
+  
+  const slideWidth = slides[0].offsetWidth;
+  const gap = 15; // Match CSS gap
+  const offset = -(currentSlide * (slideWidth + gap));
+  
+  track.style.transform = `translateX(${offset}px)`;
+}
+
+// Auto-play carousel (optional)
+let autoPlayInterval;
+
+function startAutoPlay() {
+  autoPlayInterval = setInterval(() => {
+    slideCarousel(1);
+  }, 5000); // Change slide every 5 seconds
+}
+
+function stopAutoPlay() {
+  clearInterval(autoPlayInterval);
+}
+
+// Start auto-play when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  startAutoPlay();
+  
+  // Pause on hover
+  const carouselWrapper = document.querySelector('.carousel-wrapper');
+  if (carouselWrapper) {
+    carouselWrapper.addEventListener('mouseenter', stopAutoPlay);
+    carouselWrapper.addEventListener('mouseleave', startAutoPlay);
+  }
+});
+

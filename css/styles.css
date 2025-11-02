@@ -280,6 +280,178 @@ main {
 }
 
 /* ============================================
+   SLAB INSPIRATION SECTION
+   ============================================ */
+
+.slab-section {
+  padding: 80px 40px;
+  background-color: #ffffff;
+}
+
+.slab-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.slab-content {
+  padding: 40px 0;
+}
+
+.slab-title {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666666;
+  margin-bottom: 30px;
+}
+
+.slab-description {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #1a1a1a;
+  font-weight: 300;
+}
+
+.slab-image {
+  position: relative;
+  width: 100%;
+}
+
+.slab-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slab-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-color: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.slab-caption {
+  font-size: 11px;
+  color: #1a1a1a;
+  margin-top: 15px;
+  font-weight: 300;
+}
+
+/* ============================================
+   SLAB VARIATIONS CAROUSEL
+   ============================================ */
+
+.carousel-section {
+  padding: 80px 40px;
+  background-color: #fafafa;
+}
+
+.carousel-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.carousel-wrapper {
+  position: relative;
+  padding: 0 60px;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 15px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: calc(25% - 11.25px);
+  flex-shrink: 0;
+}
+
+.carousel-image {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #e8e8e8;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-placeholder {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel-label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: 15px;
+  color: #1a1a1a;
+  font-style: italic;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-prev {
+  left: 0;
+}
+
+.carousel-next {
+  right: 0;
+}
+
+.carousel-arrow svg {
+  color: #1a1a1a;
+}
+
+/* ============================================
    PRODUCT SHOWCASE SECTION
    ============================================ */
 
@@ -607,6 +779,25 @@ footer {
 
   .collection-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Slab Section Responsive */
+  .slab-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .slab-text h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Carousel Responsive */
+  .carousel-track {
+    gap: 10px;
+  }
+
+  .carousel-slide {
+    flex: 0 0 calc(50% - 5px);
   }
 
   .footer-content {
