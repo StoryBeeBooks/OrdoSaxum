@@ -3,7 +3,6 @@
    ============================================ */
 
 .contact-page {
-  min-height: 100vh;
   background-image: url('../Image Assets/ContactUsBackground.jpeg');
   background-size: cover;
   background-position: center;
@@ -11,6 +10,7 @@
   background-repeat: no-repeat;
   padding: 120px 20px 80px 20px;
   position: relative;
+  flex: 1;
 }
 
 .contact-page::before {

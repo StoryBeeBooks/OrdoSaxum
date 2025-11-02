@@ -3,9 +3,9 @@
    ============================================ */
 
 .policies-page {
-  min-height: 100vh;
   background-color: #fafafa;
   padding: 120px 20px 80px 20px;
+  flex: 1;
 }
 
 .policies-container {

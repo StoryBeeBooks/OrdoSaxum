@@ -20,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -27,6 +28,16 @@ body {
   color: var(--primary-text);
   background-color: var(--primary-bg);
   line-height: 1.6;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Content Wrapper */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ============================================
@@ -420,6 +431,7 @@ footer {
   color: #4a4a4a;
   border-top: 1px solid #e0e0e0;
   padding: 25px 0;
+  margin-top: auto;
 }
 
 .footer-content {
