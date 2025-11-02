@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initialize animations on scroll
   initializeScrollAnimations();
+  
+  // Initialize display carousel
+  initializeDisplayCarousel();
 });
 
 /**
@@ -253,6 +256,144 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeCarousel();
   initializeStoneMasonryAnimation();
 });
+
+/* ============================================
+   DISPLAY CAROUSEL - FULL SCREEN
+   ============================================ */
+
+function initializeDisplayCarousel() {
+  const carousel = document.querySelector('.display-carousel');
+  const slides = document.querySelectorAll('.display-slide');
+  const dots = document.querySelectorAll('.display-dot');
+  
+  if (!carousel || slides.length === 0) return;
+  
+  let currentSlide = 0;
+  let startX = 0;
+  let isDragging = false;
+  let hasMoved = false;
+  
+  // Function to show specific slide
+  function showSlide(index) {
+    // Remove active class from all slides and dots
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Add active class to current slide and dot
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentSlide = index;
+  }
+  
+  // Next slide
+  function nextSlide() {
+    const next = (currentSlide + 1) % slides.length;
+    showSlide(next);
+  }
+  
+  // Previous slide
+  function prevSlide() {
+    const prev = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(prev);
+  }
+  
+  // Mouse drag functionality
+  carousel.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    hasMoved = false;
+    startX = e.clientX;
+    carousel.style.cursor = 'grabbing';
+  });
+  
+  carousel.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    
+    const deltaX = e.clientX - startX;
+    if (Math.abs(deltaX) > 5) {
+      hasMoved = true;
+    }
+  });
+  
+  carousel.addEventListener('mouseup', (e) => {
+    if (!isDragging) return;
+    
+    const deltaX = e.clientX - startX;
+    
+    if (hasMoved && Math.abs(deltaX) > 50) {
+      if (deltaX > 0) {
+        prevSlide();
+      } else {
+        nextSlide();
+      }
+    }
+    
+    isDragging = false;
+    hasMoved = false;
+    carousel.style.cursor = 'grab';
+  });
+  
+  carousel.addEventListener('mouseleave', () => {
+    isDragging = false;
+    hasMoved = false;
+    carousel.style.cursor = 'grab';
+  });
+  
+  // Touch events for mobile
+  carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    hasMoved = false;
+  });
+  
+  carousel.addEventListener('touchmove', (e) => {
+    const deltaX = e.touches[0].clientX - startX;
+    if (Math.abs(deltaX) > 5) {
+      hasMoved = true;
+    }
+  });
+  
+  carousel.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const deltaX = endX - startX;
+    
+    if (hasMoved && Math.abs(deltaX) > 50) {
+      if (deltaX > 0) {
+        prevSlide();
+      } else {
+        nextSlide();
+      }
+    }
+    
+    hasMoved = false;
+  });
+  
+  // Dot navigation
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const slideIndex = parseInt(dot.getAttribute('data-slide'));
+      showSlide(slideIndex);
+    });
+  });
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      prevSlide();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+    }
+  });
+  
+  // Mouse wheel navigation
+  carousel.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    
+    if (e.deltaY > 0) {
+      nextSlide();
+    } else {
+      prevSlide();
+    }
+  }, { passive: false });
+}
 
 /* ============================================
    ELEGANT PARTICLE FLOW ANIMATION (THREE.JS)
