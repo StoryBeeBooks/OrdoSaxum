@@ -73,6 +73,8 @@ function initializeHeroVideo() {
         placeholder.style.display = 'flex';
       }
     }, 2000);
+      // Slow down video playback by 20%
+      videoElement.playbackRate = 0.8;
   }
 }
 
