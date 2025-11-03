@@ -758,6 +758,9 @@ function initializeStoneMasonryAnimation() {
    ============================================ */
 
 const furnitureCarousels = {
+  offices: { currentSlide: 0, itemsToShow: 4 },
+  spaces: { currentSlide: 0, itemsToShow: 4 },
+  bathrooms: { currentSlide: 0, itemsToShow: 4 },
   coffee: { currentSlide: 0, itemsToShow: 4 },
   dining: { currentSlide: 0, itemsToShow: 4 },
   restaurant: { currentSlide: 0, itemsToShow: 4 },
