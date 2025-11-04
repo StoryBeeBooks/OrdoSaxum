@@ -232,17 +232,21 @@
   border-bottom: 1px solid #1a1a1a;
 }
 
+
+/* Fix for section 3.5: Remove white space in last row */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   grid-auto-flow: dense;
+  justify-items: start;
+  align-items: start;
 }
 
 .portfolio-item {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  /* Remove aspect-ratio to avoid forced white space */
   overflow: hidden;
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 1;
