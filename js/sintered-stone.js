@@ -9,7 +9,7 @@ function initInteractiveHero() {
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
-  const brushSize = 60; // Size of the brush
+  const brushSize = 78; // Size of the brush (increased by 30% from 60)
   const fadeTime = 5000; // 5 seconds before covering back up
   
   // Set canvas size
