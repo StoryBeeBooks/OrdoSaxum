@@ -2,28 +2,32 @@
 // FABRICATION MASTERY PAGE JAVASCRIPT
 // ===================================
 
-// Portfolio Gallery Filtering
+// Portfolio Gallery Filtering - Multiple Galleries Support
 document.addEventListener('DOMContentLoaded', function() {
-  const filters = document.querySelectorAll('.portfolio-filter');
-  const items = document.querySelectorAll('.portfolio-item');
+  const galleries = document.querySelectorAll('.portfolio-gallery');
+  
+  galleries.forEach(gallery => {
+    const filters = gallery.querySelectorAll('.portfolio-filter');
+    const items = gallery.querySelectorAll('.portfolio-item');
 
-  filters.forEach(filter => {
-    filter.addEventListener('click', function() {
-      const filterValue = this.getAttribute('data-filter');
+    filters.forEach(filter => {
+      filter.addEventListener('click', function() {
+        const filterValue = this.getAttribute('data-filter');
 
-      // Update active filter
-      filters.forEach(f => f.classList.remove('active'));
-      this.classList.add('active');
+        // Update active filter within this gallery
+        filters.forEach(f => f.classList.remove('active'));
+        this.classList.add('active');
 
-      // Filter items
-      items.forEach(item => {
-        const category = item.getAttribute('data-category');
-        
-        if (filterValue === 'all' || category === filterValue) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
+        // Filter items within this gallery
+        items.forEach(item => {
+          const category = item.getAttribute('data-category');
+          
+          if (filterValue === 'all' || category === filterValue) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
       });
     });
   });
