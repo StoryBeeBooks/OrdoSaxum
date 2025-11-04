@@ -9,7 +9,7 @@ function initInteractiveHero() {
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
-  const brushSize = 78; // Size of the brush (increased by 30% from 60)
+  const brushSize = 156; // Size of the brush (doubled from 78)
   const fadeTime = 5000; // 5 seconds before covering back up
   
   // Set canvas size
@@ -54,8 +54,8 @@ function initInteractiveHero() {
     // Draw bottom image (fully visible underneath)
     ctx.drawImage(bottomImage, 0, 0, canvas.width, canvas.height);
     
-    // Draw top image with 75% transparency (25% opacity)
-    ctx.globalAlpha = 0.25;
+    // Draw top image with 95% transparency (5% opacity)
+    ctx.globalAlpha = 0.05;
     ctx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
     ctx.globalAlpha = 1.0;
   }
@@ -121,7 +121,7 @@ function initInteractiveHero() {
     const tempCtx = tempCanvas.getContext('2d');
     
     // Draw top image with transparency on temp canvas
-    tempCtx.globalAlpha = 0.25;
+    tempCtx.globalAlpha = 0.05;
     tempCtx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
     tempCtx.globalAlpha = 1.0;
     
