@@ -216,21 +216,18 @@
 }
 
 .slab-wrapper {
-  width: 100%;
-  max-width: 450px;
-  padding-bottom: 100%;
-  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #f5f5f5;
   border-radius: 0;
 }
 
 .slab-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: auto;
+  width: auto;
+  height: 60%;
   object-fit: cover;
   border-radius: 0;
   box-shadow: none;
@@ -239,7 +236,7 @@
 
 .slab-image:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  transform: translate(-50%, -52%);
+  transform: translateY(-5px);
 }
 
 .slab-name {
