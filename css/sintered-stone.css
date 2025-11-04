@@ -81,13 +81,9 @@
    =================================== */
 
 .manifesto-section {
+  padding: 80px 40px;
+  background-color: #ffffff;
   position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
 }
 
 .manifesto-image {
@@ -108,28 +104,30 @@
 .manifesto-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
-  text-align: center;
-  padding: 80px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
+  text-align: left;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
 }
 
 .manifesto-heading {
-  font-size: 3rem;
-  font-weight: 300;
+  font-size: 13px;
+  font-weight: 400;
   letter-spacing: 2px;
-  color: #1a1a1a;
-  margin-bottom: 40px;
-  font-family: Georgia, serif;
+  text-transform: uppercase;
+  color: #666666;
+  margin: 0 0 20px 0;
 }
 
 .manifesto-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #333333;
+  font-size: 14px;
   font-weight: 300;
-  letter-spacing: 0.5px;
+  line-height: 1.8;
+  color: #1a1a1a;
+  margin: 0;
+  max-width: 100%;
 }
 
 /* ===================================
@@ -162,21 +160,21 @@
 .chapter-caption {
   position: absolute;
   bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
+  left: 80px;
+  text-align: left;
   z-index: 2;
-  max-width: 800px;
-  padding: 0 40px;
+  max-width: 600px;
+  padding: 0;
 }
 
 .chapter-caption p {
-  font-size: 1.2rem;
+  font-size: 14px;
   font-weight: 300;
   color: #ffffff;
-  letter-spacing: 1px;
-  line-height: 1.6;
+  letter-spacing: 0.5px;
+  line-height: 1.8;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  margin: 0;
 }
 
 /* ===================================
@@ -184,29 +182,31 @@
    =================================== */
 
 .sintered-collection {
-  padding: 100px 50px;
+  padding: 80px 40px;
   background-color: #ffffff;
 }
 
 .collection-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 80px;
 }
 
 .collection-title {
-  font-family: 'Cinzel', serif;
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 60px;
-  color: #2c2c2c;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666666;
+  text-align: left;
+  margin: 0 0 40px 0;
 }
 
 .collection-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px 80px;
-  margin-top: 50px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 0;
 }
 
 .slab-item {
@@ -216,38 +216,41 @@
 }
 
 .slab-wrapper {
-  width: 280px;
-  height: 280px;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-color: #f8f8f8;
-  padding: 25px;
-  border-radius: 2px;
-  transition: box-shadow 0.3s ease;
+  padding: 30px;
+  border-radius: 0;
+  transition: transform 0.3s ease;
 }
 
 .slab-wrapper:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
 }
 
 .slab-image {
   width: 100%;
+  max-width: 180px;
   aspect-ratio: 1 / 2;
   object-fit: cover;
-  border-radius: 1px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 15px;
 }
 
 .slab-name {
-  margin-top: 14px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.85rem;
+  font-size: 11px;
   font-weight: 400;
-  color: #333;
-  letter-spacing: 0.2px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666666;
+  margin: 0;
 }
 
 /* ===================================
@@ -304,29 +307,53 @@
 }
 
 /* Responsive Design for New Sections */
+@media (max-width: 1200px) {
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .manifesto-section,
+  .sintered-collection,
+  .invitation-section {
+    padding: 60px 20px;
+  }
+
+  .manifesto-content,
+  .collection-container,
+  .invitation-content {
+    padding: 0 20px;
+  }
+
   .manifesto-heading {
-    font-size: 2rem;
+    font-size: 13px;
   }
 
   .manifesto-text {
-    font-size: 1rem;
+    font-size: 14px;
+  }
+
+  .chapter-caption {
+    left: 30px;
+    right: 30px;
+    max-width: none;
   }
 
   .chapter-caption p {
-    font-size: 1rem;
+    font-size: 14px;
   }
 
   .collection-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
   }
 
   .invitation-heading {
-    font-size: 1.8rem;
+    font-size: 13px;
   }
 
   .invitation-text {
-    font-size: 1rem;
+    font-size: 14px;
   }
 }
