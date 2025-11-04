@@ -54,8 +54,8 @@ function initInteractiveHero() {
     // Draw bottom image (fully visible underneath)
     ctx.drawImage(bottomImage, 0, 0, canvas.width, canvas.height);
     
-    // Draw top image with 70% transparency (30% opacity)
-    ctx.globalAlpha = 0.3;
+    // Draw top image with 5% transparency (95% opacity)
+    ctx.globalAlpha = 0.95;
     ctx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
     ctx.globalAlpha = 1.0;
   }
@@ -121,7 +121,7 @@ function initInteractiveHero() {
     const tempCtx = tempCanvas.getContext('2d');
     
     // Draw top image with transparency on temp canvas
-    tempCtx.globalAlpha = 0.3;
+    tempCtx.globalAlpha = 0.95;
     tempCtx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
     tempCtx.globalAlpha = 1.0;
     
