@@ -81,14 +81,13 @@ if (typeof THREE !== 'undefined') {
     
     // Load tabletop texture (Agata Blue)
     const topTexture = textureLoader.load('Image Assets/Slabs/Agata Blue.jpg');
-    topTexture.wrapS = THREE.RepeatWrapping;
-    topTexture.wrapT = THREE.RepeatWrapping;
-    topTexture.repeat.set(2, 1);
+    topTexture.wrapS = THREE.ClampToEdgeWrapping;
+    topTexture.wrapT = THREE.ClampToEdgeWrapping;
     
     // Load leg texture (Bernini)
     const legTexture = textureLoader.load('Image Assets/Slabs/Bernini.jpg');
-    legTexture.wrapS = THREE.RepeatWrapping;
-    legTexture.wrapT = THREE.RepeatWrapping;
+    legTexture.wrapS = THREE.ClampToEdgeWrapping;
+    legTexture.wrapT = THREE.ClampToEdgeWrapping;
 
     // Tabletop
     const topGeometry = new THREE.BoxGeometry(4, 0.1, 2.5);
