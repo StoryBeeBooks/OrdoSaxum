@@ -10,7 +10,7 @@ function initInteractiveHero() {
 
   const ctx = canvas.getContext('2d');
   const revealRadius = 80; // Size of the "eraser" circle
-  const fadeTime = 4000; // 4 seconds before fading back to top image
+  const fadeTime = 5000; // 5 seconds before covering back up
   
   // Set canvas size
   function resizeCanvas() {
@@ -43,11 +43,17 @@ function initInteractiveHero() {
 
   function loadImages() {
     if (imagesLoaded < 2) return;
+    drawScene();
+  }
+
+  function drawScene() {
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     // Draw bottom image (fully visible underneath)
     ctx.drawImage(bottomImage, 0, 0, canvas.width, canvas.height);
     
-    // Draw top image with 70% transparency (30% opacity)
+    // Draw top image with 70% transparency (30% opacity) on a temporary canvas
     ctx.globalAlpha = 0.3;
     ctx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
     ctx.globalAlpha = 1.0;
@@ -76,16 +82,22 @@ function initInteractiveHero() {
     // Clear canvas and redraw base layers
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // Draw bottom image (fully visible)
+    // Draw bottom image (always visible underneath)
     ctx.drawImage(bottomImage, 0, 0, canvas.width, canvas.height);
     
-    // Draw top image with transparency
-    ctx.globalAlpha = 0.3;
-    ctx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
-    ctx.globalAlpha = 1.0;
+    // Create a temporary canvas for the top layer with holes
+    const tempCanvas = document.createElement('canvas');
+    tempCanvas.width = canvas.width;
+    tempCanvas.height = canvas.height;
+    const tempCtx = tempCanvas.getContext('2d');
     
-    // Process revealed areas (erase top image where cursor has been)
-    ctx.globalCompositeOperation = 'destination-out';
+    // Draw top image with transparency on temp canvas
+    tempCtx.globalAlpha = 0.3;
+    tempCtx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
+    tempCtx.globalAlpha = 1.0;
+    
+    // Erase circles from the top image (reveal bottom image)
+    tempCtx.globalCompositeOperation = 'destination-out';
     
     // Update and draw revealed areas
     for (let i = revealedAreas.length - 1; i >= 0; i--) {
@@ -93,7 +105,7 @@ function initInteractiveHero() {
       const age = now - area.timestamp;
       
       if (age > fadeTime) {
-        // Fade out the reveal effect
+        // Fade out the reveal effect (top image comes back)
         area.opacity -= 0.02;
         if (area.opacity <= 0) {
           revealedAreas.splice(i, 1);
@@ -101,16 +113,19 @@ function initInteractiveHero() {
         }
       }
       
-      // Draw the reveal circle
-      ctx.globalAlpha = area.opacity * 0.3; // Match the top image opacity
-      ctx.beginPath();
-      ctx.arc(area.x, area.y, area.radius, 0, Math.PI * 2);
-      ctx.fill();
+      // Draw the eraser circle
+      tempCtx.globalAlpha = area.opacity;
+      tempCtx.beginPath();
+      tempCtx.arc(area.x, area.y, area.radius, 0, Math.PI * 2);
+      tempCtx.fill();
     }
     
     // Reset composite operation
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.globalAlpha = 1.0;
+    tempCtx.globalCompositeOperation = 'source-over';
+    tempCtx.globalAlpha = 1.0;
+    
+    // Draw the modified top layer onto main canvas
+    ctx.drawImage(tempCanvas, 0, 0);
     
     requestAnimationFrame(animate);
   }
