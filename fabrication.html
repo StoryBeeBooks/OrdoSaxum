@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OrdoSaxum Fabrication Mastery - Where vision takes form through precision engineering and artisanal craftsmanship.">
+  <meta name="keywords" content="stone fabrication, custom stonework, bespoke stone pieces, architectural stone, OrdoSaxum">
+  <title>Fabrication Mastery - OrdoSaxum</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/fabrication.css">
+  <script src="js/components.js"></script>
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- SECTION 1: HERO SECTION -->
+  <section class="fabrication-hero">
+    <video class="fabrication-hero-video" autoplay muted loop playsinline>
+      <source src="Video Assets/Fabrication/Fabrication.mp4" type="video/mp4">
+    </video>
+    <div class="fabrication-hero-content">
+      <h1 class="fabrication-hero-title">Where Vision Takes Form.</h1>
+    </div>
+  </section>
+
+  <!-- SECTION 2: THE MANIFESTO -->
+  <section class="manifesto-section">
+    <div class="manifesto-container">
+      <div class="manifesto-image">
+        <img src="Image Assets/Fabrication Images/warehouse1.jpeg" alt="Library of Stone" class="manifesto-img">
+      </div>
+      <div class="manifesto-text">
+        <h2 class="manifesto-heading">From Slab to Soul.</h2>
+        <p class="manifesto-description">True fabrication mastery begins with profound respect for the material. Each slab that enters our atelier carries millions of years of geological history. Our role is not merely to cut and polish—it is to understand, honor, and realize the inherent potential within the stone. Through precision engineering and artisanal intuition, we transform raw material into heirloom pieces that transcend their utilitarian purpose to become enduring expressions of beauty and craft.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: THE DIGITAL ATELIER -->
+  <section class="digital-atelier">
+    <div class="atelier-container">
+      <h2 class="atelier-heading">The Anatomy of Precision.</h2>
+      <div class="atelier-content">
+        <div class="atelier-3d-wrapper">
+          <canvas id="fabricationCanvas" class="atelier-canvas"></canvas>
+          <div class="atelier-controls">
+            <p class="atelier-instruction">Drag to rotate • Scroll to explore</p>
+          </div>
+        </div>
+        <div class="atelier-text">
+          <p>True mastery is found in the details you can't see. We use advanced 3D modeling and animation to engineer every piece for perfect balance, structural integrity, and flawless aesthetics. Explore our process and see the uncompromising quality built into the core of every OrdoSaxum creation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: PORTFOLIO GALLERY -->
+  <section class="portfolio-gallery">
+    <div class="portfolio-container">
+      <h2 class="portfolio-title">Environments, Transformed.</h2>
+      
+      <div class="portfolio-filters">
+        <button class="portfolio-filter active" data-filter="all">All</button>
+        <button class="portfolio-filter" data-filter="curated">Curated Pieces</button>
+        <button class="portfolio-filter" data-filter="architectural">Architectural Projects</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid">
+        <!-- Curated Pieces -->
+        <div class="portfolio-item" data-category="curated">
+          <img src="Image Assets/Coffee Tables/coffee1.jpg" alt="Coffee Table">
+          <div class="portfolio-overlay">
+            <p class="portfolio-caption">Signature Coffee Table</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="curated">
+          <img src="Image Assets/Coffee Tables/coffee2.jpg" alt="Coffee Table">
+          <div class="portfolio-overlay">
+            <p class="portfolio-caption">Modern Plinth Design</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="curated">
+          <img src="Image Assets/Dining Table/dining1.jpg" alt="Dining Table">
+          <div class="portfolio-overlay">
+            <p class="portfolio-caption">Bespoke Dining Table</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="curated">
+          <img src="Image Assets/Coffee Tables/coffee3.jpg" alt="Coffee Table">
+          <div class="portfolio-overlay">
+            <p class="portfolio-caption">Contemporary Side Table</p>
+          </div>
+        </div>
+
+        <!-- Architectural Projects -->
+        <div class="portfolio-item" data-category="architectural">
+          <img src="Image Assets/Kitchen/kitchen1.jpeg" alt="Kitchen Project">
+          <div class="portfolio-overlay">
+            <p class="portfolio-caption">Luxury Kitchen Installation</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="architectural">
+          <img src="Image Assets/Bathroom/bathroom1.jpeg" alt="Bathroom Project">
+          <div class="portfolio-overlay">
+            <p class="portfolio-caption">Spa-Inspired Bathroom</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="architectural">
+          <img src="Image Assets/Office/office1.jpeg" alt="Office Project">
+          <div class="portfolio-overlay">
+            <p class="portfolio-caption">Executive Office Space</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="architectural">
+          <img src="Image Assets/Lobby/lobby1.jpeg" alt="Lobby Project">
+          <div class="portfolio-overlay">
+            <p class="portfolio-caption">Hotel Lobby Feature Wall</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="architectural">
+          <img src="Image Assets/Kitchen/kitchen3.jpeg" alt="Kitchen Project">
+          <div class="portfolio-overlay">
+            <p class="portfolio-caption">Contemporary Kitchen Design</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="curated">
+          <img src="Image Assets/Dining Table/dining2.jpg" alt="Dining Table">
+          <div class="portfolio-overlay">
+            <p class="portfolio-caption">Statement Dining Table</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="architectural">
+          <img src="Image Assets/Fireplace/fireplace1.jpeg" alt="Fireplace">
+          <div class="portfolio-overlay">
+            <p class="portfolio-caption">Architectural Fireplace</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="architectural">
+          <img src="Image Assets/Restaurant/restaurant1.jpeg" alt="Restaurant">
+          <div class="portfolio-overlay">
+            <p class="portfolio-caption">Restaurant Interior</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: CONSCIOUS CRAFTSMANSHIP -->
+  <section class="conscious-craftsmanship">
+    <div class="craftsmanship-container">
+      <h2 class="craftsmanship-title">Conscious Craftsmanship</h2>
+      <p class="craftsmanship-subtitle">True mastery includes a profound respect for our resources. At OrdoSaxum, sustainable innovation is integrated into every stage of our fabrication process.</p>
+      
+      <div class="craftsmanship-grid">
+        <!-- Column 1 -->
+        <div class="craftsmanship-item">
+          <div class="craftsmanship-icon">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M40 10 L50 25 L40 40 L30 25 Z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M35 45 Q40 55 45 45" stroke="currentColor" stroke-width="2" fill="none"/>
+              <circle cx="40" cy="60" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M32 60 L48 60 M40 52 L40 68" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="craftsmanship-heading">Intelligent Resource Management</h3>
+          <p class="craftsmanship-text">Our studio operates on a closed-loop water reclamation system, which purifies and recycles nearly 100% of the water used in cutting and polishing. Combined with high-efficiency, low-emission machinery, we minimize our environmental footprint while maximizing precision.</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="craftsmanship-item">
+          <div class="craftsmanship-icon">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="40" height="30" stroke="currentColor" stroke-width="2" fill="none"/>
+              <line x1="30" y1="25" x2="30" y2="45" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="40" y1="25" x2="40" y2="45" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="50" y1="25" x2="50" y2="45" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="25" y="55" width="10" height="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <rect x="40" y="55" width="7" height="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <rect x="52" y="55" width="5" height="5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="craftsmanship-heading">Waste Valorization</h3>
+          <p class="craftsmanship-text">Stone is a precious resource, and we believe none of it should be wasted. Remnants and offcuts from our large-scale projects are methodically repurposed and transformed into smaller bespoke objects, custom mosaics, or recycled as aggregates, ensuring a circular approach to our craft.</p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="craftsmanship-item">
+          <div class="craftsmanship-icon">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 40 Q30 20 40 40 T60 40" stroke="currentColor" stroke-width="2" fill="none"/>
+              <circle cx="20" cy="40" r="3" fill="currentColor"/>
+              <circle cx="40" cy="40" r="3" fill="currentColor"/>
+              <circle cx="60" cy="40" r="3" fill="currentColor"/>
+              <path d="M15 40 Q15 55 40 55 Q65 55 65 40" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="craftsmanship-heading">A Legacy of Longevity</h3>
+          <p class="craftsmanship-text">The most sustainable practice is to create something that endures. Our commitment to superior materials and precision fabrication ensures that every OrdoSaxum piece is engineered to last for generations, transcending trends and eliminating the need for replacement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: THE INVITATION -->
+  <section class="fabrication-invitation">
+    <div class="invitation-container">
+      <h2 class="invitation-main-title">Your Vision, Executed to Perfection.</h2>
+      
+      <div class="invitation-grid">
+        <!-- Left Column: Curated Collection -->
+        <div class="invitation-card">
+          <div class="invitation-image">
+            <img src="Image Assets/ContactUsBackground.jpeg" alt="Curated Collection">
+          </div>
+          <div class="invitation-content">
+            <h3 class="invitation-card-title">The Curated Collection</h3>
+            <p class="invitation-card-text">Explore our collection of signature pieces, including coffee tables, plinths, and nightstands. Each item is crafted with the same meticulous attention to detail and is available for customization to suit your space.</p>
+            <a href="#" class="invitation-cta">Shop the Collection</a>
+          </div>
+        </div>
+
+        <!-- Right Column: Bespoke Commission -->
+        <div class="invitation-card">
+          <div class="invitation-image">
+            <img src="Image Assets/ContactUsBackground.jpeg" alt="Bespoke Commission">
+          </div>
+          <div class="invitation-content">
+            <h3 class="invitation-card-title">The Bespoke Commission</h3>
+            <p class="invitation-card-text">For large-scale residential or commercial projects, our team of specialists will partner with you from concept to installation. Bring us your most ambitious architectural visions, and we will bring them to life in stone.</p>
+            <a href="contact.html" class="invitation-cta">Begin a Project Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="js/fabrication.js"></script>
+</body>
+</html>
