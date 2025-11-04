@@ -76,10 +76,24 @@ if (typeof THREE !== 'undefined') {
     // Create a simple table model (placeholder for actual 3D model)
     const tableGroup = new THREE.Group();
 
+    // Load textures
+    const textureLoader = new THREE.TextureLoader();
+    
+    // Load tabletop texture (Agata Blue)
+    const topTexture = textureLoader.load('Image Assets/Slabs/Agata Blue.jpg');
+    topTexture.wrapS = THREE.RepeatWrapping;
+    topTexture.wrapT = THREE.RepeatWrapping;
+    topTexture.repeat.set(2, 1);
+    
+    // Load leg texture (Bernini)
+    const legTexture = textureLoader.load('Image Assets/Slabs/Bernini.jpg');
+    legTexture.wrapS = THREE.RepeatWrapping;
+    legTexture.wrapT = THREE.RepeatWrapping;
+
     // Tabletop
     const topGeometry = new THREE.BoxGeometry(4, 0.1, 2.5);
     const topMaterial = new THREE.MeshStandardMaterial({ 
-      color: 0xdedede,
+      map: topTexture,
       metalness: 0.3,
       roughness: 0.4
     });
@@ -90,7 +104,7 @@ if (typeof THREE !== 'undefined') {
     // Legs
     const legGeometry = new THREE.BoxGeometry(0.15, 0.9, 0.15);
     const legMaterial = new THREE.MeshStandardMaterial({ 
-      color: 0xc0c0c0,
+      map: legTexture,
       metalness: 0.2,
       roughness: 0.5
     });
