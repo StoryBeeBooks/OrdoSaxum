@@ -231,6 +231,10 @@
     padding: 100px 15px 60px 15px;
   }
 
+  .contact-container {
+    max-width: 100%;
+  }
+
   .contact-page-title {
     font-size: 2rem;
     margin-bottom: 40px;
@@ -238,6 +242,10 @@
 
   .location-header {
     padding: 20px 25px;
+  }
+
+  .location-country {
+    font-size: 12px;
   }
 
   .location-card-header {
@@ -259,6 +267,11 @@
 
   .info-label {
     margin-bottom: 8px;
+    font-size: 10px;
+  }
+
+  .info-content {
+    font-size: 13px;
   }
 
   .hours-list .day {
@@ -268,5 +281,43 @@
 
   .hours-list .time {
     font-size: 12px;
+  }
+
+  .coming-soon {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page {
+    padding: 90px 10px 50px 10px;
+  }
+
+  .contact-page-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .location-header,
+  .location-card-header {
+    padding: 18px 20px;
+  }
+
+  .location-info {
+    padding: 20px;
+  }
+
+  .location-office {
+    font-size: 13px;
+  }
+
+  .hours-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .hours-list .dot {
+    display: none;
   }
 }

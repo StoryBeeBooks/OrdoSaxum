@@ -456,6 +456,7 @@
   
   .usage-grid {
     grid-template-columns: 1fr;
+    gap: 50px;
   }
 
   .gallery-grid {
@@ -465,13 +466,13 @@
 
 @media (max-width: 768px) {
   .natural-hero {
+    height: 70vh;
     margin-top: -80px;
     padding-top: 80px;
   }
 
   .natural-hero-content {
-    padding: 40px 30px;
-    margin: 0;
+    padding: 30px;
   }
   
   .natural-hero-title {
@@ -482,18 +483,24 @@
     font-size: 0.9rem;
   }
   
-  .natural-intro {
+  .marble-quarry-style {
     padding: 60px 20px;
   }
   
-  .natural-intro-container {
+  .marble-quarry-container {
     padding: 0 20px;
-    grid-template-columns: 1fr;
-    gap: 40px;
   }
-  
-  .natural-intro-image {
-    height: auto;
+
+  .marble-quarry-style .natural-intro-heading {
+    font-size: 12px;
+  }
+
+  .marble-quarry-style .natural-intro-text {
+    font-size: 13px;
+  }
+
+  .marble-quarry-caption {
+    font-size: 10px;
   }
   
   .stone-categories,
@@ -509,6 +516,19 @@
   .natural-cta-container {
     padding: 0 20px;
   }
+
+  .stone-categories-title,
+  .marble-usage-title,
+  .gallery-title,
+  .natural-cta-title {
+    font-size: 12px;
+  }
+
+  .marble-usage-intro,
+  .usage-text,
+  .natural-cta-text {
+    font-size: 13px;
+  }
   
   .stone-cards-wrapper {
     grid-template-columns: 1fr;
@@ -519,19 +539,62 @@
     height: 400px;
   }
   
-  .gallery-grid {
-    grid-template-columns: 1fr;
+  .usage-grid {
+    gap: 40px;
+  }
+
+  .usage-heading {
+    font-size: 12px;
+  }
+
+  .usage-icon svg {
+    width: 60px;
+    height: 60px;
   }
   
-  .gallery-item {
-    height: 300px;
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
   .gallery-filters {
-    gap: 10px;
+    gap: 5px;
+    margin-bottom: 30px;
   }
 
   .gallery-filter {
     padding: 8px 15px;
+    font-size: 10px;
+  }
+
+  .natural-cta-button {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .natural-hero {
+    height: 60vh;
+  }
+
+  .natural-hero-title {
+    font-size: 1.3rem;
+  }
+
+  .natural-hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .stone-card {
+    height: 350px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .usage-icon svg {
+    width: 50px;
+    height: 50px;
   }
 }
