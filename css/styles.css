@@ -927,6 +927,12 @@ footer {
     font-size: 13px;
   }
 
+  .slab-img {
+    object-fit: contain;
+    max-height: none;
+    height: auto;
+  }
+
   /* Carousel Responsive */
   .carousel-section {
     padding: 50px 20px;
