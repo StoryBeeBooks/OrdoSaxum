@@ -24,7 +24,7 @@ function initInteractiveHero() {
   const topImage = new Image();
   let imagesLoaded = 0;
   
-  bottomImage.src = 'Image Assets/Sintered Stone/SinteredHero2.JPG';
+  bottomImage.src = 'Image Assets/slab2.jpg';
   topImage.src = 'Image Assets/Sintered Stone/SinteredHero1.jpg';
 
   // Track revealed areas with timestamp
