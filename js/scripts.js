@@ -19,27 +19,22 @@ document.addEventListener('DOMContentLoaded', function() {
 /**
  * Toggle mobile menu
  */
-function toggleMenu(event) {
-  if (event) event.preventDefault();
-  
+function toggleMenu() {
   const navMenu = document.getElementById('navMenu');
   const hamburger = document.querySelector('.hamburger');
-  const body = document.body;
   
   if (!navMenu || !hamburger) return;
   
   const isActive = navMenu.classList.contains('active');
   
   if (isActive) {
-    // Close menu
     navMenu.classList.remove('active');
     hamburger.classList.remove('active');
-    body.style.overflow = '';
+    document.body.style.overflow = '';
   } else {
-    // Open menu
     navMenu.classList.add('active');
     hamburger.classList.add('active');
-    body.style.overflow = 'hidden'; // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
   }
 }
 
@@ -90,26 +85,9 @@ function initializeNavigation() {
     hamburger.addEventListener('keypress', function(e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        toggleMenu(e);
+        toggleMenu();
       }
     });
-  }
-
-  // Prevent body scroll when menu is open
-  const navMenu = document.getElementById('navMenu');
-  if (navMenu) {
-    const observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        if (mutation.attributeName === 'class') {
-          if (navMenu.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-          } else {
-            document.body.style.overflow = '';
-          }
-        }
-      });
-    });
-    observer.observe(navMenu, { attributes: true });
   }
 }
 

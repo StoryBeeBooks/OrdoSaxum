@@ -12,8 +12,6 @@
   align-items: flex-end;
   justify-content: flex-start;
   overflow: hidden;
-  margin-top: -120px;
-  padding-top: 120px;
 }
 
 .fabrication-hero::before {
@@ -502,8 +500,6 @@
 @media (max-width: 768px) {
   .fabrication-hero {
     height: 70vh;
-    margin-top: -80px;
-    padding-top: 80px;
   }
 
   .fabrication-hero-content {
