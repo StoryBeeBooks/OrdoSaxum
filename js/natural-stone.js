@@ -30,17 +30,8 @@ function initGalleryFilters() {
         
         if (filterValue === 'all' || category === filterValue) {
           item.classList.remove('hidden');
-          // Fade in animation
-          setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'scale(1)';
-          }, 10);
         } else {
-          item.style.opacity = '0';
-          item.style.transform = 'scale(0.9)';
-          setTimeout(() => {
-            item.classList.add('hidden');
-          }, 300);
+          item.classList.add('hidden');
         }
       });
     });
