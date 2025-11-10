@@ -115,7 +115,7 @@ const observer = new IntersectionObserver(function(entries) {
 
 // Apply fade-in animation to sections
 document.addEventListener('DOMContentLoaded', function() {
-  const sections = document.querySelectorAll('.natural-intro, .stone-categories, .marble-usage, .inspiration-gallery, .natural-cta');
+  const sections = document.querySelectorAll('.natural-intro, .stone-categories, .marble-usage, .natural-cta');
   
   sections.forEach(section => {
     section.style.opacity = '0';
