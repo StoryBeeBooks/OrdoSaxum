@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize smooth scrolling for navigation links
   initializeNavigation();
   
-  // Initialize hero video fallback
-  initializeHeroVideo();
+  // Initialize all videos (hero, fabrication, sintered-stone)
+  initializeAllVideos();
   
   // Initialize animations on scroll
   initializeScrollAnimations();
@@ -19,29 +19,63 @@ document.addEventListener('DOMContentLoaded', function() {
 /**
  * Toggle mobile menu
  */
-function toggleMenu() {
+function toggleMenu(event) {
+  if (event) event.preventDefault();
+  
   const navMenu = document.getElementById('navMenu');
   const hamburger = document.querySelector('.hamburger');
+  const body = document.body;
   
-  navMenu.classList.toggle('active');
-  hamburger.classList.toggle('active');
+  if (!navMenu || !hamburger) return;
+  
+  const isActive = navMenu.classList.contains('active');
+  
+  if (isActive) {
+    // Close menu
+    navMenu.classList.remove('active');
+    hamburger.classList.remove('active');
+    body.style.overflow = '';
+  } else {
+    // Open menu
+    navMenu.classList.add('active');
+    hamburger.classList.add('active');
+    body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
 }
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+  const navMenu = document.getElementById('navMenu');
+  const hamburger = document.querySelector('.hamburger');
+  const navbar = document.querySelector('.navbar');
+  
+  if (navMenu && hamburger && navbar) {
+    if (!navbar.contains(event.target) && navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+      hamburger.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+});
 
 /**
  * Initialize navigation interactivity
  */
 function initializeNavigation() {
   const navLinks = document.querySelectorAll('.nav-link');
+  const hamburger = document.querySelector('.hamburger');
   
+  // Handle nav link clicks
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       // Close mobile menu when clicking a link
       const navMenu = document.getElementById('navMenu');
       const hamburger = document.querySelector('.hamburger');
       
-      if (navMenu.classList.contains('active')) {
+      if (navMenu && navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
         hamburger.classList.remove('active');
+        document.body.style.overflow = '';
       }
       
       // If link is just '#' or empty href, prevent default
@@ -50,39 +84,93 @@ function initializeNavigation() {
       }
     });
   });
+
+  // Handle keyboard events for hamburger menu
+  if (hamburger) {
+    hamburger.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu(e);
+      }
+    });
+  }
+
+  // Prevent body scroll when menu is open
+  const navMenu = document.getElementById('navMenu');
+  if (navMenu) {
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === 'class') {
+          if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = '';
+          }
+        }
+      });
+    });
+    observer.observe(navMenu, { attributes: true });
+  }
 }
 
 /**
  * Initialize hero video with fallback to placeholder
  */
+/**
+ * Initialize all videos on the page with WeChat support
+ */
+function initializeAllVideos() {
+  const videos = document.querySelectorAll('video');
+  const isWeChat = /MicroMessenger/i.test(navigator.userAgent);
+  
+  videos.forEach(function(video) {
+    // Handle video loading errors
+    video.addEventListener('error', function() {
+      console.error('Video failed to load:', video.src);
+    });
+
+    // Special handling for WeChat
+    if (isWeChat) {
+      video.muted = true;
+      video.setAttribute('webkit-playsinline', 'true');
+      video.setAttribute('playsinline', 'true');
+      
+      // WeChat specific event
+      document.addEventListener('WeixinJSBridgeReady', function() {
+        video.play().catch(function(error) {
+          console.warn('WeChat autoplay prevented:', error);
+        });
+      }, false);
+      
+      // Fallback
+      setTimeout(function() {
+        video.play().catch(function(error) {
+          console.warn('Autoplay prevented:', error);
+        });
+      }, 100);
+    } else {
+      // Standard browsers
+      video.play().catch(function(error) {
+        console.warn('Autoplay prevented:', error);
+      });
+    }
+  });
+}
+
 function initializeHeroVideo() {
+  // This function is kept for backwards compatibility
+  // but now handled by initializeAllVideos()
   const video = document.querySelector('.hero-video');
   const placeholder = document.getElementById('video-placeholder');
 
-  if (video) {
-    // Handle video loading errors
-    video.addEventListener('error', function() {
-      console.error('Video failed to load');
-      video.style.display = 'none';
-      if (placeholder) placeholder.style.display = 'flex';
-    });
-
-    // Attempt to play the video (required for some mobile browsers)
-    video.play().catch(function(error) {
-      console.warn('Autoplay prevented:', error);
-      // Video autoplay blocked - this is normal on mobile
-      // The video will still be visible and can be played manually
-    });
-
+  if (video && placeholder) {
     // Fallback: check if video loaded after 3 seconds
     setTimeout(function() {
       if (!video.readyState || video.readyState < 2) {
         console.warn('Video loading slow or failed');
-        // Don't hide video on mobile - it might just be buffering
-        // Only show placeholder if video completely failed
         if (video.networkState === 3) { // NETWORK_NO_SOURCE
           video.style.display = 'none';
-          if (placeholder) placeholder.style.display = 'flex';
+          placeholder.style.display = 'flex';
         }
       }
     }, 3000);
