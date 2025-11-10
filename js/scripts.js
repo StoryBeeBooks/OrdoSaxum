@@ -56,35 +56,36 @@ function initializeNavigation() {
  * Initialize hero video with fallback to placeholder
  */
 function initializeHeroVideo() {
-  const videoSlow = document.querySelector('.hero-video-slow');
-  const videoNormal = document.querySelector('.hero-video-normal');
+  const video = document.querySelector('.hero-video');
   const placeholder = document.getElementById('video-placeholder');
 
-  if (videoSlow) {
-    videoSlow.addEventListener('error', function() {
-      videoSlow.style.display = 'none';
-      placeholder.style.display = 'flex';
+  if (video) {
+    // Handle video loading errors
+    video.addEventListener('error', function() {
+      console.error('Video failed to load');
+      video.style.display = 'none';
+      if (placeholder) placeholder.style.display = 'flex';
     });
-    setTimeout(function() {
-      if (!videoSlow.readyState || videoSlow.readyState < 1) {
-        videoSlow.style.display = 'none';
-        placeholder.style.display = 'flex';
-      }
-    }, 2000);
-    videoSlow.playbackRate = 0.7;
-  }
-  if (videoNormal) {
-    videoNormal.addEventListener('error', function() {
-      videoNormal.style.display = 'none';
-      placeholder.style.display = 'flex';
+
+    // Attempt to play the video (required for some mobile browsers)
+    video.play().catch(function(error) {
+      console.warn('Autoplay prevented:', error);
+      // Video autoplay blocked - this is normal on mobile
+      // The video will still be visible and can be played manually
     });
+
+    // Fallback: check if video loaded after 3 seconds
     setTimeout(function() {
-      if (!videoNormal.readyState || videoNormal.readyState < 1) {
-        videoNormal.style.display = 'none';
-        placeholder.style.display = 'flex';
+      if (!video.readyState || video.readyState < 2) {
+        console.warn('Video loading slow or failed');
+        // Don't hide video on mobile - it might just be buffering
+        // Only show placeholder if video completely failed
+        if (video.networkState === 3) { // NETWORK_NO_SOURCE
+          video.style.display = 'none';
+          if (placeholder) placeholder.style.display = 'flex';
+        }
       }
-    }, 2000);
-    videoNormal.playbackRate = 1.0;
+    }, 3000);
   }
 }
 

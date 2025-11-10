@@ -162,6 +162,16 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background: #2a2a2a; /* Fallback while loading */
+}
+
+/* Hide video controls on mobile */
+.chapter-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.chapter-video::-webkit-media-controls-enclosure {
+  display: none !important;
 }
 
 .chapter-caption {
