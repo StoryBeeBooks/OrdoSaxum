@@ -374,10 +374,12 @@
   overflow: hidden;
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 1;
+  transform: scale(1);
 }
 
 .gallery-item.hidden {
-  display: none;
+  display: none !important;
+  opacity: 0 !important;
 }
 
 .gallery-item:hover {

@@ -51,13 +51,35 @@ function initInteractiveHero() {
     // Clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // Draw bottom image (fully visible underneath)
-    ctx.drawImage(bottomImage, 0, 0, canvas.width, canvas.height);
+    // Draw bottom image with cover behavior
+    drawImageCover(ctx, bottomImage, 0, 0, canvas.width, canvas.height);
     
-    // Draw top image with 5% transparency (95% opacity)
+    // Draw top image with 5% transparency (95% opacity) and cover behavior
     ctx.globalAlpha = 0.95;
-    ctx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
+    drawImageCover(ctx, topImage, 0, 0, canvas.width, canvas.height);
     ctx.globalAlpha = 1.0;
+  }
+
+  // Helper function to draw image with object-fit: cover behavior
+  function drawImageCover(ctx, img, x, y, w, h) {
+    const imgRatio = img.width / img.height;
+    const canvasRatio = w / h;
+    let sourceX = 0;
+    let sourceY = 0;
+    let sourceWidth = img.width;
+    let sourceHeight = img.height;
+    
+    if (imgRatio > canvasRatio) {
+      // Image is wider than canvas - crop sides
+      sourceWidth = img.height * canvasRatio;
+      sourceX = (img.width - sourceWidth) / 2;
+    } else {
+      // Image is taller than canvas - crop top/bottom
+      sourceHeight = img.width / canvasRatio;
+      sourceY = (img.height - sourceHeight) / 2;
+    }
+    
+    ctx.drawImage(img, sourceX, sourceY, sourceWidth, sourceHeight, x, y, w, h);
   }
 
   // Mouse move handler with brush stroke
@@ -111,8 +133,8 @@ function initInteractiveHero() {
     // Clear canvas and redraw base layers
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // Draw bottom image (always visible underneath)
-    ctx.drawImage(bottomImage, 0, 0, canvas.width, canvas.height);
+    // Draw bottom image with cover behavior (always visible underneath)
+    drawImageCover(ctx, bottomImage, 0, 0, canvas.width, canvas.height);
     
     // Create a temporary canvas for the top layer with holes
     const tempCanvas = document.createElement('canvas');
@@ -120,9 +142,9 @@ function initInteractiveHero() {
     tempCanvas.height = canvas.height;
     const tempCtx = tempCanvas.getContext('2d');
     
-    // Draw top image with transparency on temp canvas
+    // Draw top image with transparency and cover behavior on temp canvas
     tempCtx.globalAlpha = 0.95;
-    tempCtx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
+    drawImageCover(tempCtx, topImage, 0, 0, canvas.width, canvas.height);
     tempCtx.globalAlpha = 1.0;
     
     // Erase brush strokes from the top image (reveal bottom image)
