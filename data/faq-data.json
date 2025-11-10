@@ -1,82 +1,549 @@
 {
-  "pageTitle": "Frequently Asked Questions",
-  "pageSubtitle": "Ordosaxum's Stone Slabs in Toronto & the GTA - A comprehensive resource for homeowners, designers, contractors, and builders",
+  "pageTitle": "Frequently Asked Questions: Ordosaxum's Stone Slabs in Toronto & the GTA",
+  "pageSubtitle": "This FAQ is a comprehensive resource for homeowners, designers, contractors, and builders in the Greater Toronto Area.",
   "categories": [
     {
-      "id": 1,
+      "id": "general-showroom",
       "title": "General Questions & Our Showroom",
       "questions": [
         {
-          "id": "1.1",
+          "id": "q1",
           "question": "What is Ordosaxum?",
           "answer": "Ordosaxum is a premier supplier and direct importer of high-quality natural and engineered stone slabs. We offer an extensive collection of materials like marble, granite, quartzite, and quartz, curated from the best quarries and manufacturers worldwide for projects across the Greater Toronto Area."
         },
         {
-          "id": "1.2",
+          "id": "q2",
           "question": "Where is your showroom located?",
           "answer": "Our showroom and warehouse are conveniently located in Toronto, ON. We invite you to visit us to experience the true color, pattern, and texture of our slabs in person. Please see our Contact Us page for the precise address and a map."
         },
         {
-          "id": "1.3",
+          "id": "q3",
           "question": "What is your primary service area?",
           "answer": "We proudly serve the entire Greater Toronto Area (GTA). We regularly work with clients and trade professionals on projects in Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Oakville, Brampton, and beyond."
         },
         {
-          "id": "1.4",
+          "id": "q4",
           "question": "Do I need an appointment to visit your showroom?",
           "answer": "While walk-ins are welcome, we highly recommend scheduling an appointment. An appointment ensures that one of our stone specialists is available to provide you with personalized attention, guide you through our vast inventory, and help you select the perfect slab for your project."
         },
         {
-          "id": "1.5",
+          "id": "q5",
           "question": "Who do you sell your stone slabs to?",
           "answer": "We work with a wide range of clients, including homeowners, interior designers, architects, contractors, builders, and kitchen & bath renovators. Whether you are a trade professional or a homeowner selecting a slab for your renovation, we are here to assist you."
         }
       ]
     },
     {
-      "id": 2,
+      "id": "stone-products",
       "title": "Our Stone Products & Inventory",
       "questions": [
         {
-          "id": "2.1",
+          "id": "q6",
           "question": "What types of stone do you carry?",
           "answer": "We offer a diverse selection of premium surfaces, including:\n• Natural Stone: Marble, Granite, Quartzite, Onyx, Travertine, and Dolomite.\n• Engineered Stone: A wide variety of high-quality Quartz brands and designs."
         },
         {
-          "id": "2.2",
+          "id": "q7",
           "question": "How can I see your current stone inventory?",
           "answer": "The best way to see our full and current inventory is to visit our Toronto showroom. Because our collection is constantly updated with new and unique arrivals, our physical warehouse provides the most accurate representation of available slabs."
         },
         {
-          "id": "2.3",
+          "id": "q8",
           "question": "What is the difference between Quartz and Quartzite?",
           "answer": "This is a common and important question. Quartzite is a natural, metamorphic rock that is very hard and durable, known for its beautiful, often marble-like veining. Quartz is an engineered, man-made product composed of crushed quartz crystals, resins, and pigments. It is non-porous and highly resistant to stains and scratches. We can show you stunning examples of both at our showroom."
         },
         {
-          "id": "2.4",
+          "id": "q9",
           "question": "My project in Vaughan requires a very specific look. Do you carry exotic stones?",
           "answer": "Yes. As a direct importer, we specialize in sourcing unique and exotic slabs from around the world. We encourage you to visit us to explore our collection of distinctive stones that can serve as the centerpiece for your project in Vaughan."
         }
       ]
     },
     {
-      "id": 3,
+      "id": "selection-purchase",
       "title": "The Slab Selection & Purchase Process",
       "questions": [
         {
-          "id": "3.1",
+          "id": "q10",
           "question": "Do you cut and install countertops?",
           "answer": "Ordosaxum is a primary supplier of stone slabs. We do not perform fabrication (cutting) or installation. However, we work very closely with a network of trusted and highly skilled fabricators throughout the GTA. We are happy to recommend a qualified professional to bring your vision to life."
         },
         {
-          "id": "3.2",
+          "id": "q11",
           "question": "I'm a homeowner in Markham. What is the process for buying a slab for my new kitchen?",
           "answer": "The process is straightforward and exciting:\n1. Visit Us: Come to our Toronto showroom with any inspiration photos, cabinet samples, or design plans.\n2. Select Your Slab: Our specialist will guide you through our inventory to find the perfect material.\n3. Tag & Hold: Once you've chosen your unique slab, we will tag it with your name and project details.\n4. Coordinate with Your Fabricator: We will then coordinate with your chosen fabricator for them to pick up the slab and begin the process of templating, cutting, and installing your new countertops."
         },
         {
-          "id": "3.3",
+          "id": "q12",
           "question": "I'm a designer working on a project in downtown Toronto. How do you work with trade professionals?",
           "answer": "We value our partnerships with trade professionals. We offer dedicated support, access to our full range of materials, and a collaborative environment. Please contact us to learn more about our trade program and how we can be a valuable resource for your design business in Toronto."
+        }
+      ]
+    },
+    {
+      "id": "care-maintenance",
+      "title": "Stone Care & Maintenance",
+      "questions": [
+        {
+          "id": "q13",
+          "question": "Do I need to seal my granite countertops?",
+          "answer": "Yes, natural stones like granite are porous and should be sealed upon installation and periodically thereafter (typically once a year) to protect against staining. Sealing is a simple process that helps maintain the stone's beauty for decades."
+        },
+        {
+          "id": "q14",
+          "question": "Are marble countertops a good choice for a busy kitchen?",
+          "answer": "Marble is a timeless choice known for its elegance. However, it is a softer, more porous stone than granite or quartzite and can be susceptible to etching from acidic liquids (like lemon juice) and staining if not sealed properly. It is a fantastic choice for those who appreciate its natural patina over time. For clients seeking high durability with a similar look, we often recommend Quartzite or Quartz."
+        },
+        {
+          "id": "q15",
+          "question": "How do I clean my new quartz countertops?",
+          "answer": "Cleaning quartz is very easy. Simply use a soft cloth with warm water and a mild soap. Avoid using harsh chemicals, abrasive scrubbers, or bleach, as they can damage the surface finish."
+        }
+      ]
+    },
+    {
+      "id": "budget-pricing",
+      "title": "Budget, Pricing, and Value",
+      "questions": [
+        {
+          "id": "q16",
+          "question": "How is the price of a stone slab determined?",
+          "answer": "The price of a stone slab is influenced by several key factors:\n• Material Type: Natural stones like quartzite and marble often have a wider price range than many standard quartz options.\n• Rarity and Origin: Exotic slabs sourced from exclusive quarries around the world are priced higher than more commonly available stones.\n• Slab Thickness: While standard thicknesses are the norm, custom thickness can affect the price.\n• Finish: Special finishes like honed, leathered, or polished can also impact the final cost."
+        },
+        {
+          "id": "q17",
+          "question": "Can you provide a price quote for my project?",
+          "answer": "As the slab supplier, Ordosaxum provides the price for the material (the slabs) only. We can give you a clear cost for the specific slabs you select in our showroom. For a complete 'all-in' project quote that includes templating, fabrication (cutting), and installation, you will need to speak with your chosen fabricator. They will provide a final price that includes our slab cost and their labour."
+        },
+        {
+          "id": "q18",
+          "question": "Do you have options for projects on a tighter budget in the GTA?",
+          "answer": "Absolutely. We understand that every project in the GTA has a budget. We stock a wide variety of materials at various price points, including beautiful and affordable options in granite, marble, and select quartz lines. Our stone specialists are experts at helping you find a material that achieves your aesthetic goals while respecting your budget."
+        },
+        {
+          "id": "q19",
+          "question": "Is investing in a high-quality stone countertop a good value for my Toronto home?",
+          "answer": "Yes, investing in premium stone countertops is one of the best ways to add significant and lasting value to your Toronto property. High-quality countertops are a major selling feature, enhance the daily enjoyment of your home, and offer durability that can last a lifetime with proper care. It is an investment in both beauty and equity."
+        }
+      ]
+    },
+    {
+      "id": "logistics-delivery",
+      "title": "Logistics, Delivery, and Coordination in the GTA",
+      "questions": [
+        {
+          "id": "q20",
+          "question": "Once I purchase a slab, how does it get to my fabricator?",
+          "answer": "After you have selected and paid for your slab, we coordinate directly with your fabrication company. They will arrange to pick up the slab from our Toronto warehouse. We ensure the slab is ready and accessible for a smooth and professional handover."
+        },
+        {
+          "id": "q21",
+          "question": "Do you deliver slabs directly to a home in Mississauga or Oakville?",
+          "answer": "We do not deliver slabs to residential job sites. Slabs are large, heavy, and require specialized equipment and expertise to handle and transport safely. This is why they are always transported to the fabricator's workshop, where they have the proper tools (like gantry cranes and A-frames) to manage the material before it's cut and prepared for installation at your Mississauga or Oakville home."
+        },
+        {
+          "id": "q22",
+          "question": "How long will you hold a slab for me after I purchase it?",
+          "answer": "We can hold your purchased slabs for a reasonable period while you coordinate the final details with your contractor or fabricator. We ask that you discuss your project timeline with our team during the selection process so we can make suitable arrangements for your specific needs."
+        }
+      ]
+    },
+    {
+      "id": "trade-professionals",
+      "title": "For Trade Professionals (Designers, Builders, Contractors)",
+      "questions": [
+        {
+          "id": "q23",
+          "question": "I'm a contractor in Brampton. How can working with Ordosaxum benefit my business?",
+          "answer": "Partnering with Ordosaxum gives you and your Brampton clients access to a vast, high-quality inventory of unique stone slabs. We act as an extension of your business, providing your clients with a professional showroom experience and expert guidance. This allows you to offer a premium selection without the overhead of carrying your own inventory, ultimately leading to more satisfied customers."
+        },
+        {
+          "id": "q24",
+          "question": "As an interior designer, can I reserve slabs for a client's project in Richmond Hill?",
+          "answer": "Yes. We regularly work with designers to reserve specific slabs for upcoming projects in Richmond Hill and across the GTA. Once your client has approved the selection, we can place the slabs on hold for an agreed-upon period, ensuring the exact material you designed with is available when your project is ready."
+        },
+        {
+          "id": "q25",
+          "question": "Do you offer samples for design presentations?",
+          "answer": "Yes, we have smaller samples of many of our materials available for trade professionals. These are invaluable for client meetings, mood boards, and coordinating with other finishes like cabinetry, flooring, and paint. Please speak with one of our specialists to see our sample selection."
+        }
+      ]
+    },
+    {
+      "id": "technical-specs",
+      "title": "Technical Specifications & Slab Details",
+      "questions": [
+        {
+          "id": "q26",
+          "question": "What is a 'bookmatched' slab, and do you offer them?",
+          "answer": "Bookmatching is the practice of matching two or more stone slabs from the same block, so that the two adjoining surfaces mirror each other, like an open book. This creates a stunning, continuous pattern and is often used for large feature walls, waterfall islands, and fireplace surrounds. We often carry slabs in consecutive order that are ideal for bookmatching. If this is a requirement for your project, please inform our specialists, and they will show you our available bookmatched sets."
+        },
+        {
+          "id": "q27",
+          "question": "What are the typical dimensions and thickness of your slabs?",
+          "answer": "Slab dimensions vary based on the specific block of natural stone or the production run of engineered quartz. On average, slabs are roughly 120 x 70 inches. The standard thickness for countertop applications in the North American market is 3cm (1 1/4 inches). We also stock certain materials in 2cm (3/4 inch), which is often used for backsplashes or specialty applications."
+        },
+        {
+          "id": "q28",
+          "question": "What are the different surface finishes you offer?",
+          "answer": "The most common finish is Polished, which creates a shiny, reflective surface that brings out the stone's vibrant colors and details. We also offer slabs with a Honed finish (a matte, smooth surface with little to no shine) and a Leathered finish (a soft sheen with a textured feel that is popular for hiding fingerprints). Availability of these finishes varies by material."
+        },
+        {
+          "id": "q29",
+          "question": "I see a small fissure in a granite slab I like. Is this a defect?",
+          "answer": "Natural stones like granite and marble often have inherent characteristics, including small fissures or pits. These are not typically defects but rather part of the stone's natural formation and unique character. Our high-quality slabs are structurally sound. During fabrication, any significant fissures are typically reinforced with epoxy by the fabricator to ensure long-term durability."
+        }
+      ]
+    },
+    {
+      "id": "trends-design",
+      "title": "Trends, Design & Inspiration for the GTA Market",
+      "questions": [
+        {
+          "id": "q30",
+          "question": "What are the most popular countertop choices for homes in Toronto right now?",
+          "answer": "Currently, we are seeing a high demand for light-colored Quartzite and Marble for luxury projects in areas like Yorkville and Rosedale, as they offer a timeless, elegant look. For modern condominiums and family homes in areas like North York and Mississauga, durable and low-maintenance engineered Quartz in subtle white and grey patterns remains exceptionally popular. Bold, veiny granite is also making a strong comeback for statement kitchen islands."
+        },
+        {
+          "id": "q31",
+          "question": "Can I use the same stone for my kitchen countertops and my backsplash?",
+          "answer": "Yes, creating a full-height backsplash with the same slab as your countertop is a luxurious and high-impact design trend. It creates a seamless, continuous look that is both beautiful and easy to clean. This is a popular choice for custom homes in areas like Oakville and Vaughan."
+        },
+        {
+          "id": "q32",
+          "question": "What is a 'waterfall edge' island, and can your slabs be used for this?",
+          "answer": "A waterfall edge is a design feature where the countertop material continues down the side of the island or cabinet, all the way to the floor. It creates a continuous flow of the stone's pattern. Our slabs are perfectly suited for this application, and it's a very popular and dramatic feature that requires a skilled fabricator to execute perfectly."
+        },
+        {
+          "id": "q33",
+          "question": "I need a durable and stylish option for my outdoor BBQ area in Markham. What do you recommend?",
+          "answer": "For outdoor applications in the Canadian climate, it is crucial to select a stone that can withstand UV rays and freeze-thaw cycles. We typically recommend Granite as the best choice for outdoor kitchens in Markham and the GTA due to its exceptional durability and resistance to the elements. Most engineered quartz products are not warrantied for outdoor use as their resins can yellow with prolonged sun exposure."
+        }
+      ]
+    },
+    {
+      "id": "why-ordosaxum",
+      "title": "Why Choose Ordosaxum?",
+      "questions": [
+        {
+          "id": "q34",
+          "question": "Why should I buy my stone slab from Ordosaxum instead of a big box store?",
+          "answer": "When you choose Ordosaxum, you get:\n• Unmatched Selection: We offer a far greater variety of unique, high-quality, and exotic slabs than what is typically available at a big box store.\n• Expert Guidance: Our team consists of stone specialists who can provide in-depth knowledge about each material's properties and origins.\n• Quality Control: As direct importers, we hand-select our blocks and slabs to ensure they meet our high standards for quality and beauty.\n• Full Slab Viewing: You get to see and select the exact slab that will be installed in your home, not just a small sample. This is critical as the pattern and color can vary significantly across a single block of natural stone."
+        },
+        {
+          "id": "q35",
+          "question": "How does Ordosaxum contribute to the local design and building community?",
+          "answer": "We are proud to be an integral part of the GTA's design and construction industry. We actively build relationships with local interior designers, contractors, and fabricators, acting as a key resource and partner for projects that beautify our communities, from stunning downtown condos to beautiful suburban family homes."
+        }
+      ]
+    },
+    {
+      "id": "sourcing-sustainability",
+      "title": "Sourcing, Sustainability & The Ordosaxum Standard",
+      "questions": [
+        {
+          "id": "q36",
+          "question": "Where do you source your natural stones from?",
+          "answer": "As a direct importer, we have established relationships with prestigious quarries all over the world. Our collection includes marble from Italy, granite from Brazil, quartzite from the Americas, and unique stones from across Europe and Asia. Each block is carefully selected by experts for its quality, beauty, and structural integrity before being shipped to our Toronto facility."
+        },
+        {
+          "id": "q37",
+          "question": "Is natural stone an environmentally friendly or 'green' building material?",
+          "answer": "Natural stone is a highly sustainable building material. It is a natural product of the Earth, requiring no chemicals for its creation. Its key environmental benefits include:\n• Durability & Longevity: A stone countertop can last for generations, reducing the need for replacement and the waste associated with it.\n• Low VOCs: Natural stone is not manufactured with resins or plastics, so it does not off-gas volatile organic compounds (VOCs), contributing to better indoor air quality.\n• Recyclability: Old stone can be recycled and repurposed for other uses, from aggregate to smaller design elements."
+        },
+        {
+          "id": "q38",
+          "question": "What quality standards do your slabs have to meet?",
+          "answer": "Every slab in our Toronto warehouse meets the 'Ordosaxum Standard.' This means each piece has been individually inspected for:\n• Structural Integrity: We ensure there are no major defects, deep cracks, or weaknesses that would compromise the slab during fabrication or use.\n• Aesthetic Quality: We look for exceptional color, clarity of pattern, and consistency within the block.\n• Accurate Calibration: We verify that the slab's thickness is consistent to ensure a smooth fabrication and installation process."
+        }
+      ]
+    },
+    {
+      "id": "project-planning",
+      "title": "Project Planning & Advanced Scenarios",
+      "questions": [
+        {
+          "id": "q39",
+          "question": "I'm renovating a historic home in The Annex (Toronto). What stone would you suggest to complement a classic Victorian design?",
+          "answer": "For a historic Toronto home, we often recommend materials that honour the classic aesthetic. Timeless choices like Carrara Marble or Calacatta Marble are historically appropriate and beautiful. For clients who desire a classic marble look but with enhanced durability for a modern family lifestyle, we would suggest a white or grey Quartzite which can mimic the look of marble but offers superior hardness and stain resistance."
+        },
+        {
+          "id": "q40",
+          "question": "We are designing a high-traffic commercial bar in the Entertainment District. What is the most durable yet stylish option?",
+          "answer": "For a demanding commercial environment like a bar, durability is paramount. We would strongly recommend either:\n• Dark, dense Granite: It is extremely hard, scratch-resistant, and less likely to show stains or etching from acidic drinks.\n• Engineered Quartz: As a non-porous material, it is exceptionally resistant to staining from wine, citrus, and coffee, and it requires no sealing.\nBoth options are available in a wide range of stylish, sophisticated designs suitable for a high-end commercial space."
+        },
+        {
+          "id": "q41",
+          "question": "My kitchen layout requires a very large island. Are there seams in countertops?",
+          "answer": "Seams are a normal part of countertop installation, especially for large or L-shaped layouts where the dimensions exceed that of a single slab. However, the goal is always to minimize their number and visibility. This is where a skilled fabricator is essential. They will work to:\n• Optimize Layout: Plan the cuts on the slab to place seams in the least conspicuous locations (e.g., near sinks or cooktops).\n• Ensure a Tight Fit: Create a precise, tight join between the stone pieces.\n• Color-Match Epoxy: Use a custom-tinted epoxy to fill the seam, blending it with the stone's natural color and pattern.\nWhen you select your slab with us, we can discuss your layout and help you choose a material with a pattern that will lend itself to less visible seams."
+        }
+      ]
+    },
+    {
+      "id": "lifetime-material",
+      "title": "Understanding Stone as a Lifetime Material",
+      "questions": [
+        {
+          "id": "q42",
+          "question": "Will my new countertops look exactly like the sample I saw?",
+          "answer": "While samples are a great tool for initial design, they cannot represent the full range of color and pattern present in a natural stone slab. This is a key reason we insist our clients view and approve the full slab in our warehouse. The final installed countertop will be cut from that specific slab you selected, so you know exactly what the final product will look like. For engineered quartz, the pattern is generally more consistent, but slight variations can still occur between production batches."
+        },
+        {
+          "id": "q43",
+          "question": "What does it mean for marble to 'patina' or 'etch'?",
+          "answer": "Etching is a chemical reaction that happens when acidic substances (like vinegar, wine, or lemon juice) come into contact with the calcium carbonate in marble. It removes the polish and leaves a dull, lighter-colored spot on the surface. A 'patina' is the collection of these etches and small signs of wear over many years. Many people cherish this patina as it signifies a well-loved, well-used surface that tells a story, much like the marble countertops in a historic European bakery. For those who prefer a pristine surface, we recommend quartzite or quartz."
+        },
+        {
+          "id": "q44",
+          "question": "How does Ordosaxum support its clients after the purchase?",
+          "answer": "Our relationship doesn't end when the slab leaves our warehouse. We see ourselves as your long-term stone resource. We provide clear guidance on proper care and maintenance for the specific material you've chosen. Furthermore, by connecting you with trusted, high-quality fabricators in the GTA, we ensure that our beautiful materials are treated with the respect and skill they deserve, leading to a successful final installation and a lifetime of enjoyment for you."
+        }
+      ]
+    },
+    {
+      "id": "digital-tools",
+      "title": "Digital Tools & The Virtual Experience",
+      "questions": [
+        {
+          "id": "q45",
+          "question": "Can I view your inventory online?",
+          "answer": "While our physical showroom in Toronto provides the most accurate and immersive experience, we are working on enhancing our digital gallery. You can view a curated selection of our materials on the 'Products' section of our website to get inspiration and see the types of stone we carry. For the most up-to-date and comprehensive view of our live inventory, a visit is always best."
+        },
+        {
+          "id": "q46",
+          "question": "Do you offer virtual consultations for clients in the outer GTA?",
+          "answer": "Yes. For clients located further out in the Greater Toronto Area (e.g., in Barrie, Hamilton, or Durham Region) who may have difficulty making an initial trip, we can arrange a virtual consultation. Using video conferencing, one of our stone specialists can provide a preliminary tour of our warehouse, discuss your project needs, and show you slabs that match your design criteria. This helps streamline the process before you visit in person to make your final selection."
+        },
+        {
+          "id": "q47",
+          "question": "I have a picture of a kitchen I love. Can you help me find a similar stone?",
+          "answer": "Absolutely. We encourage you to bring in any inspiration photos from magazines, Pinterest, or design websites. Our experienced team has a keen eye for design and an in-depth knowledge of our vast inventory. We can almost always find a slab that matches the look and feel of your inspiration or suggest a beautiful alternative that will achieve a similar aesthetic for your GTA home."
+        },
+        {
+          "id": "q48",
+          "question": "How do I use the 'Visualizer' tool on your website?",
+          "answer": "Our online Visualizer tool is a fantastic resource for preliminary planning. It allows you to upload a photo of your own kitchen or use a sample room scene and then apply different stone options to the countertops, island, and backsplash. This can help you experiment with different styles and color palettes from the comfort of your home before you visit our showroom to see the slabs in person."
+        }
+      ]
+    },
+    {
+      "id": "imperfections-expectations",
+      "title": "Handling Imperfections & Setting Expectations",
+      "questions": [
+        {
+          "id": "q49",
+          "question": "What are 'resined' slabs, and is it a sign of a low-quality stone?",
+          "answer": "Not at all. The application of resin is a standard, high-quality practice for many natural stones, especially more delicate materials like some marbles and quartzites. During the polishing process at the quarry, a penetrating resin is applied to the slab's surface. This fills in any natural micro-fissures or pits, reinforcing the stone's structural integrity and enhancing its final polish. It is a sign of a properly processed, high-quality slab, not a defect."
+        },
+        {
+          "id": "q50",
+          "question": "The two slabs I chose for my large kitchen have slight variations. Is this normal?",
+          "answer": "Yes, for natural stone, this is completely normal and part of its inherent beauty. Since natural stone is a product of the earth, no two slabs are ever 100% identical, even when cut from the same block (known as 'consecutive slabs'). There will be natural variations in veining, color tone, and pattern. A skilled fabricator will artfully arrange the templates on the slabs to ensure the best possible flow and pattern match at the seams, celebrating these unique characteristics."
+        },
+        {
+          "id": "q51",
+          "question": "What is your policy if a slab is damaged before it gets to my fabricator?",
+          "answer": "Ordosaxum takes utmost care in the handling and storage of our materials. In the rare event a slab is damaged while in our possession or during the handover to the fabricator, we will work with you to find a suitable replacement from our inventory to ensure your project can proceed. Once the slab is in the care of the fabricator, they assume responsibility for its safe handling."
+        }
+      ]
+    },
+    {
+      "id": "future-stone",
+      "title": "The Future of Stone & Design",
+      "questions": [
+        {
+          "id": "q52",
+          "question": "Are there any new types of stone materials gaining popularity?",
+          "answer": "The stone industry is always innovating. We are seeing growing interest in materials like:\n• Dolomite: A natural stone that often resembles marble but is generally harder and more resistant to etching.\n• Ultra-Compact Surfaces (e.g., Dekton, Neolith): These are next-generation engineered surfaces created through a process of extreme heat and pressure, resulting in a material that is virtually indestructible and suitable for both indoor and outdoor use.\nWe are constantly updating our inventory to include the latest high-performance and beautiful materials available."
+        },
+        {
+          "id": "q53",
+          "question": "How is technology changing the way stone countertops are made?",
+          "answer": "Technology has revolutionized the fabrication process. Modern fabricators in the GTA use advanced digital tools like:\n• Laser Templating: To create a precise digital map of your cabinetry.\n• Slab Imaging Software: To photograph the exact slab you chose and digitally lay out the countertop pieces to optimize the pattern and seam placement.\n• CNC Waterjet Saws: To execute incredibly precise and complex cuts.\nThis technology ensures a flawless fit and a beautiful final result that was once only achievable through painstaking manual labor."
+        },
+        {
+          "id": "q54",
+          "question": "Why should I choose Ordosaxum as my partner for my most important projects?",
+          "answer": "Choosing Ordosaxum means choosing a partner dedicated to the success of your project. We offer an unparalleled selection of the world's finest stones, backed by a team of passionate experts committed to providing personalized service, honest guidance, and unwavering support. We are not just selling stone; we are providing the centerpiece of your home's design, a lasting investment that will bring you joy and value for decades to come. We are proud to be the trusted stone authority for discerning clients and trade professionals across Toronto and the GTA."
+        }
+      ]
+    },
+    {
+      "id": "community-partnerships",
+      "title": "Community & Local Partnerships in the GTA",
+      "questions": [
+        {
+          "id": "q55",
+          "question": "Do you collaborate with local builders and designers in the Greater Toronto Area?",
+          "answer": "Yes, fostering strong relationships within the local design and building community is a cornerstone of our business. We actively partner with a wide network of respected interior designers, custom home builders, architects, and renovation contractors across the GTA. By serving as a reliable and knowledgeable resource for them, we help ensure their creative visions are realized with the highest quality materials available."
+        },
+        {
+          "id": "q56",
+          "question": "I am a student in a Toronto-based interior design program. Can I visit your showroom for educational purposes?",
+          "answer": "Absolutely. We welcome and encourage the next generation of design professionals to visit our showroom. Exploring different types of stone and understanding their unique properties is a vital part of a designer's education. Please call ahead to schedule a time for your visit, and one of our specialists would be happy to provide an overview of our materials and answer your questions."
+        },
+        {
+          "id": "q57",
+          "question": "Do you participate in any local home shows or design events in the GTA?",
+          "answer": "We are always looking for opportunities to engage with the community and showcase our beautiful materials. Please follow our social media channels or check the 'News & Events' section of our website for announcements about our participation in events like the Interior Design Show (IDS) Toronto, the National Home Show, or other local design-focused exhibitions."
+        }
+      ]
+    },
+    {
+      "id": "practical-advice",
+      "title": "Practical Advice for Homeowners",
+      "questions": [
+        {
+          "id": "q58",
+          "question": "How do I protect my new countertops during my ongoing renovation?",
+          "answer": "After your countertops are installed, it's crucial to protect them if other trades are still working in the space. We recommend covering them completely with a heavy-duty protective material like Ram Board or thick cardboard. This will shield the surface from scratches from tools, paint splatters, or adhesive drips that can occur during the final stages of a renovation."
+        },
+        {
+          "id": "q59",
+          "question": "Should I choose my stone slab before or after I choose my cabinet color and flooring?",
+          "answer": "For the best results, we recommend choosing your stone slab first, or at the very least, concurrently with your other core finishes. The stone slab is often the most significant and unique design element in a kitchen or bathroom. Because natural stone has inherent variations, it is much easier to find a paint color or tile that complements the unique slab you fall in love with than it is to find a slab that perfectly matches a pre-selected paint color. Bring your cabinet and flooring samples with you when you visit our showroom to see how they look next to the full slab."
+        },
+        {
+          "id": "q60",
+          "question": "Can I use a leftover piece of my slab for another project, like a vanity top or a cutting board?",
+          "answer": "Yes, this is a great way to be sustainable and create a cohesive look in your home. The leftover portion of a slab after your countertops are cut is called a 'remnant.' These remnants are perfect for smaller projects like bathroom vanities, shower niches, small tabletops, or even custom serving boards. Discuss this with your fabricator, as they will have the remnant and can advise you on the cost of fabricating these additional pieces."
+        }
+      ]
+    },
+    {
+      "id": "service-commitment",
+      "title": "Ordosaxum's Commitment to Service",
+      "questions": [
+        {
+          "id": "q61",
+          "question": "What does the 'Ordosaxum Experience' entail?",
+          "answer": "The Ordosaxum Experience is about providing a seamless, educational, and inspiring journey from selection to final coordination. It means:\n• A Personalized Welcome: You will be greeted by a knowledgeable specialist ready to understand your project.\n• Expert, No-Pressure Guidance: We educate you on the pros and cons of each material, helping you make a confident choice.\n• A World-Class Selection: You have access to a curated collection of the finest stones available.\n• Professional Coordination: We ensure a smooth process by working closely with your chosen trade professionals.\nOur ultimate goal is for you to feel excited and confident in your choice, knowing you have selected a beautiful piece of the Earth that will transform your space."
+        },
+        {
+          "id": "q62",
+          "question": "How do you handle customer concerns or issues?",
+          "answer": "We are deeply committed to client satisfaction. While our role is the supply of a high-quality raw material, if you have any concerns about the slab you purchased from us, we ask that you contact us immediately. We believe in open communication and will work diligently with you and your fabricator to understand and address any issues. Our reputation in the GTA is built on trust and integrity, and we stand behind the quality of our products."
+        }
+      ]
+    },
+    {
+      "id": "post-installation",
+      "title": "Post-Installation Care & Common Issues",
+      "questions": [
+        {
+          "id": "q63",
+          "question": "What do I do if I get a stain on my natural stone countertop?",
+          "answer": "The first step is to identify the type of stain (e.g., oil-based, organic like coffee or wine, etc.). For most common stains, you can use a targeted cleaning method. A highly effective technique for stubborn stains is to use a 'poultice'—a paste-like cleaning agent that is spread on the stain, covered, and left to dry, which pulls the stain out of the stone. We can provide basic guidance, and there are many resources online for specific stain types. For severe stains, a professional stone restoration specialist in the GTA may be required."
+        },
+        {
+          "id": "q64",
+          "question": "I chipped the edge of my quartz countertop. Can it be repaired?",
+          "answer": "Yes, in most cases, small chips in quartz or natural stone countertops can be professionally repaired. A skilled fabricator or a stone repair specialist can fill the chip with a color-matched epoxy or acrylic adhesive, then sand and polish the area to blend it seamlessly with the rest of the surface. It is a delicate process, and we strongly recommend hiring a professional in the Toronto area to handle the repair."
+        },
+        {
+          "id": "q65",
+          "question": "My polished marble has a dull spot after a lemon spilled on it. What happened?",
+          "answer": "This is called an 'etch,' not a stain. The acid from the lemon reacted with the calcium carbonate in the marble and corroded the surface, removing the shine. While a stain is a discoloration, an etch is physical damage to the stone's finish. Minor etches on polished surfaces can sometimes be fixed with a marble polishing powder. For more significant etching, you will need to contact a professional stone restoration company in the GTA to re-hone and re-polish the surface."
+        }
+      ]
+    },
+    {
+      "id": "material-comparisons",
+      "title": "Material Comparisons (Head-to-Head)",
+      "questions": [
+        {
+          "id": "q66",
+          "question": "Marble vs. Quartzite: Which is better for a kitchen?",
+          "answer": "This depends on your lifestyle and aesthetic preferences.\n• Marble: Offers a classic, timeless beauty with soft, elegant veining. It is softer and more porous, meaning it will etch and can stain if not diligently cared for. It is perfect for those who appreciate a 'living finish' that develops a patina over time.\n• Quartzite: Often has a similar visual appeal to marble but is a much harder and more durable natural stone (ranking higher on the Mohs scale of hardness). It is highly resistant to scratching and etching, making it an excellent choice for busy kitchens in family homes where durability is as important as beauty."
+        },
+        {
+          "id": "q67",
+          "question": "Granite vs. Quartz: What's the main difference in performance?",
+          "answer": "This is a classic comparison between a natural stone and an engineered one.\n• Granite: A natural igneous rock, each slab is entirely unique. It is highly heat-resistant (you can place hot pots on it) and scratch-resistant. It is porous and requires sealing to prevent stains. It is an excellent choice for both indoor and outdoor kitchens.\n• Quartz: An engineered product, it is non-porous and does not require any sealing. It is highly scratch- and stain-resistant. Its patterns are man-made and therefore very consistent. However, the resins in quartz are not highly heat-resistant, so trivets should always be used for hot cookware. It is generally not recommended for outdoor use."
+        }
+      ]
+    },
+    {
+      "id": "supply-chain",
+      "title": "Understanding the Supply Chain & Our Role",
+      "questions": [
+        {
+          "id": "q68",
+          "question": "Why doesn't Ordosaxum also cut and install the countertops?",
+          "answer": "Our business model is intentionally specialized to provide the greatest value to our clients. By focusing exclusively on being a direct importer and supplier, we can:\n• Offer a Superior Selection: We dedicate 100% of our resources to sourcing the most beautiful and unique stones from around the world.\n• Maintain Unbiased Expertise: Our advice is focused solely on helping you find the perfect material, without being tied to a specific fabrication schedule or capability.\n• Empower Client Choice: This model allows you to work with any fabricator in the GTA you choose, ensuring you get the best quality craftsmanship for your specific project needs.\nWe believe in a 'best of breed' approach—we provide the best stone, and we connect you with the best artisans to shape it."
+        },
+        {
+          "id": "q69",
+          "question": "What is the role of a 'fabricator' and why are they so important?",
+          "answer": "The fabricator is the skilled artisan who transforms the raw slab you purchase from us into your finished countertop. Their critical role includes:\n• Precise Templating: Creating an exact template of your cabinets.\n• Strategic Layout: Planning where to cut the stone to best showcase its veins and patterns.\n• Expert Cutting & Edging: Using specialized saws and tools to cut the stone and create the finished edge profile.\n• Professional Installation: Safely transporting and installing the finished pieces in your home.\nA good fabricator is the essential link between a beautiful slab and a stunning final result."
+        }
+      ]
+    },
+    {
+      "id": "health-safety",
+      "title": "Health, Safety & Material Integrity",
+      "questions": [
+        {
+          "id": "q70",
+          "question": "I read online that granite can emit radon gas. Is it safe for my home?",
+          "answer": "This is a common concern that has been extensively studied and widely debunked by scientific organizations. All-natural products, including stone, contain trace amounts of radioactive elements. However, numerous studies by bodies like the Marble Institute of America (now the Natural Stone Institute) and the Environmental Protection Agency (EPA) have concluded that the amount of radon emitted by natural stone countertops is negligible and poses no health risk. The air and soil outside your home contain significantly more radon than you would ever encounter from a countertop. Our natural stone slabs are perfectly safe for use in any home."
+        },
+        {
+          "id": "q71",
+          "question": "Are your stone surfaces food-safe?",
+          "answer": "Yes. When properly sealed (for natural stone) or in their natural state (for non-porous quartz), our countertops provide a safe and hygienic surface for food preparation. The key is proper daily cleaning with a mild soap and water solution to remove bacteria from the surface, just as you would with any other countertop material."
+        }
+      ]
+    },
+    {
+      "id": "financial-considerations",
+      "title": "Financial Considerations & Project Budgeting",
+      "questions": [
+        {
+          "id": "q72",
+          "question": "Does Ordosaxum offer financing for slab purchases?",
+          "answer": "Ordosaxum does not offer in-house financing. Payment for the slab material is typically due at the time of purchase and final selection. However, many of our clients incorporate the cost of the stone into a larger renovation loan or line of credit sourced from their financial institution. Additionally, some fabricators or contractors may offer their own financing options that can bundle the cost of our slab with their fabrication and installation services."
+        },
+        {
+          "id": "q73",
+          "question": "How much of my total kitchen renovation budget should I allocate for countertops?",
+          "answer": "While this can vary greatly depending on the scope of your renovation, a common guideline in the design and construction industry is to allocate approximately 10-15% of your total kitchen budget to the countertops (including material, fabrication, and installation). As the most visible and heavily used surface in the kitchen, it is a wise area to invest in. For a luxury project where the countertop is the main feature, this percentage could be higher."
+        },
+        {
+          "id": "q74",
+          "question": "Are there 'hidden costs' I should be aware of when buying a stone countertop?",
+          "answer": "We believe in full transparency. The pricing for your project will have two main components:\n1. Material Cost: This is the price of the slab(s) you purchase from us.\n2. Fabrication & Installation Cost: This is the price your chosen fabricator will charge you.\nWhen getting a quote from your fabricator, ensure it includes everything: laser templating, slab pickup from our warehouse, all necessary cut-outs (for sink, faucet, cooktop), the desired edge profile, delivery, and the final installation. A reputable fabricator will provide a comprehensive quote that is clear and easy to understand."
+        },
+        {
+          "id": "q75",
+          "question": "Will investing in a high-end quartzite or marble slab increase my home's resale value in the competitive Toronto market?",
+          "answer": "Absolutely. In a sophisticated real estate market like Toronto, high-end finishes are a major differentiator. A stunning, well-crafted countertop made from premium natural stone like quartzite or marble is a powerful selling feature. It signals quality and luxury to potential buyers, can significantly increase the perceived value of your home, and often helps a property sell faster. It is an investment that pays dividends in both daily enjoyment and long-term equity."
+        }
+      ]
+    },
+    {
+      "id": "guarantee-final",
+      "title": "The Ordosaxum Guarantee & Final Word",
+      "questions": [
+        {
+          "id": "q76",
+          "question": "What is your guarantee to your clients?",
+          "answer": "Our guarantee is centered on Quality, Authenticity, and Expertise. We guarantee that the slab you select in our showroom is the exact slab that will be delivered to your fabricator. We guarantee the authenticity of our materials—that our marble is marble, our granite is granite, and our quartzite is quartzite. Finally, we guarantee that the guidance and information we provide are based on years of industry expertise to help you make the best possible decision for your project in the GTA."
+        },
+        {
+          "id": "q77",
+          "question": "How does Ordosaxum stay ahead of design trends in the industry?",
+          "answer": "Our team is passionate about stone and design. We stay ahead of the curve by:\n• Attending International Stone Fairs: We travel to major industry exhibitions in places like Italy (Marmomac) to see new materials and processing technologies firsthand.\n• Collaborating with Designers: We maintain a constant dialogue with the top interior designers in Toronto, who are at the forefront of the industry.\n• Global Sourcing: Our direct relationships with quarries allow us to see and acquire new and exotic materials as soon as they become available."
+        },
+        {
+          "id": "q78",
+          "question": "What is the single most important piece of advice you can give someone choosing a new countertop?",
+          "answer": "Choose a material that you truly love. A countertop is a long-term commitment and the centerpiece of your room. While budget and durability are important practical considerations, the stone you select should bring you joy every time you see it. Take your time, explore all your options in our showroom, and select the one slab that speaks to you. Functionality can often be adapted, but a genuine love for the look and feel of your chosen stone is what makes a project truly successful."
+        },
+        {
+          "id": "q79",
+          "question": "Why is Ordosaxum the premier choice for stone slabs in the Greater Toronto Area?",
+          "answer": "Ordosaxum is the premier choice because we provide an experience that is as enduring and exceptional as the stone we sell. We combine a globally sourced, hand-selected inventory with the personalized, expert service of a local specialist. We understand the unique design sensibilities and quality demands of the Toronto market. We are not just a supplier; we are your dedicated partner in finding the perfect stone to create a space that is beautiful, functional, and uniquely yours. We invite you to visit our showroom and discover the Ordosaxum difference."
         }
       ]
     }
