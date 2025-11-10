@@ -245,6 +245,8 @@
   position: sticky;
   top: 140px;
   min-width: 265px;
+  max-width: 265px;
+  overflow-x: hidden;
 }
 
 .sidebar-nav {
@@ -294,11 +296,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 15px 30px;
-  }
-
-  .sidebar-link {
-    min-width: 60ch;
-    max-width: 60ch;
   }
 
   .policies-main {
