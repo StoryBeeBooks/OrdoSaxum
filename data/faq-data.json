@@ -1,0 +1,84 @@
+{
+  "pageTitle": "Frequently Asked Questions",
+  "pageSubtitle": "Ordosaxum's Stone Slabs in Toronto & the GTA - A comprehensive resource for homeowners, designers, contractors, and builders",
+  "categories": [
+    {
+      "id": 1,
+      "title": "General Questions & Our Showroom",
+      "questions": [
+        {
+          "id": "1.1",
+          "question": "What is Ordosaxum?",
+          "answer": "Ordosaxum is a premier supplier and direct importer of high-quality natural and engineered stone slabs. We offer an extensive collection of materials like marble, granite, quartzite, and quartz, curated from the best quarries and manufacturers worldwide for projects across the Greater Toronto Area."
+        },
+        {
+          "id": "1.2",
+          "question": "Where is your showroom located?",
+          "answer": "Our showroom and warehouse are conveniently located in Toronto, ON. We invite you to visit us to experience the true color, pattern, and texture of our slabs in person. Please see our Contact Us page for the precise address and a map."
+        },
+        {
+          "id": "1.3",
+          "question": "What is your primary service area?",
+          "answer": "We proudly serve the entire Greater Toronto Area (GTA). We regularly work with clients and trade professionals on projects in Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Oakville, Brampton, and beyond."
+        },
+        {
+          "id": "1.4",
+          "question": "Do I need an appointment to visit your showroom?",
+          "answer": "While walk-ins are welcome, we highly recommend scheduling an appointment. An appointment ensures that one of our stone specialists is available to provide you with personalized attention, guide you through our vast inventory, and help you select the perfect slab for your project."
+        },
+        {
+          "id": "1.5",
+          "question": "Who do you sell your stone slabs to?",
+          "answer": "We work with a wide range of clients, including homeowners, interior designers, architects, contractors, builders, and kitchen & bath renovators. Whether you are a trade professional or a homeowner selecting a slab for your renovation, we are here to assist you."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Our Stone Products & Inventory",
+      "questions": [
+        {
+          "id": "2.1",
+          "question": "What types of stone do you carry?",
+          "answer": "We offer a diverse selection of premium surfaces, including:\n• Natural Stone: Marble, Granite, Quartzite, Onyx, Travertine, and Dolomite.\n• Engineered Stone: A wide variety of high-quality Quartz brands and designs."
+        },
+        {
+          "id": "2.2",
+          "question": "How can I see your current stone inventory?",
+          "answer": "The best way to see our full and current inventory is to visit our Toronto showroom. Because our collection is constantly updated with new and unique arrivals, our physical warehouse provides the most accurate representation of available slabs."
+        },
+        {
+          "id": "2.3",
+          "question": "What is the difference between Quartz and Quartzite?",
+          "answer": "This is a common and important question. Quartzite is a natural, metamorphic rock that is very hard and durable, known for its beautiful, often marble-like veining. Quartz is an engineered, man-made product composed of crushed quartz crystals, resins, and pigments. It is non-porous and highly resistant to stains and scratches. We can show you stunning examples of both at our showroom."
+        },
+        {
+          "id": "2.4",
+          "question": "My project in Vaughan requires a very specific look. Do you carry exotic stones?",
+          "answer": "Yes. As a direct importer, we specialize in sourcing unique and exotic slabs from around the world. We encourage you to visit us to explore our collection of distinctive stones that can serve as the centerpiece for your project in Vaughan."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The Slab Selection & Purchase Process",
+      "questions": [
+        {
+          "id": "3.1",
+          "question": "Do you cut and install countertops?",
+          "answer": "Ordosaxum is a primary supplier of stone slabs. We do not perform fabrication (cutting) or installation. However, we work very closely with a network of trusted and highly skilled fabricators throughout the GTA. We are happy to recommend a qualified professional to bring your vision to life."
+        },
+        {
+          "id": "3.2",
+          "question": "I'm a homeowner in Markham. What is the process for buying a slab for my new kitchen?",
+          "answer": "The process is straightforward and exciting:\n1. Visit Us: Come to our Toronto showroom with any inspiration photos, cabinet samples, or design plans.\n2. Select Your Slab: Our specialist will guide you through our inventory to find the perfect material.\n3. Tag & Hold: Once you've chosen your unique slab, we will tag it with your name and project details.\n4. Coordinate with Your Fabricator: We will then coordinate with your chosen fabricator for them to pick up the slab and begin the process of templating, cutting, and installing your new countertops."
+        },
+        {
+          "id": "3.3",
+          "question": "I'm a designer working on a project in downtown Toronto. How do you work with trade professionals?",
+          "answer": "We value our partnerships with trade professionals. We offer dedicated support, access to our full range of materials, and a collaborative environment. Please contact us to learn more about our trade program and how we can be a valuable resource for your design business in Toronto."
+        }
+      ]
+    }
+  ]
+}
