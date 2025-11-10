@@ -19,10 +19,31 @@
 
   <!-- FAQ PAGE CONTENT (Dynamically Loaded) -->
   <main class="policies-page faq-page">
-    <div id="faq-container" class="policies-container">
-      <!-- Content will be dynamically loaded from data/faq-data.json -->
-      <div class="loading-state">
-        <p>Loading FAQ content...</p>
+    <div class="policies-container">
+      <div class="policies-header">
+        <p class="breadcrumb">FAQ + RESOURCES</p>
+        <h1 class="policies-page-title">Frequently Asked Questions</h1>
+        <p class="policies-intro">This FAQ is a comprehensive resource for homeowners, designers, contractors, and builders in the Greater Toronto Area.</p>
+      </div>
+
+      <div class="policies-layout">
+        <!-- Main Content -->
+        <div class="policies-main">
+          <section class="policy-section" id="faq-content">
+            <!-- FAQ content will be dynamically loaded from data/faq-data.json -->
+            <div class="loading-state">
+              <p>Loading FAQ content...</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <aside class="policies-sidebar">
+          <h3 class="sidebar-title">Categories</h3>
+          <nav class="sidebar-nav">
+            <!-- Category links will be dynamically loaded -->
+          </nav>
+        </aside>
       </div>
     </div>
   </main>

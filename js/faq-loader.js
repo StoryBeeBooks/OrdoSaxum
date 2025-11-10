@@ -61,7 +61,7 @@ class FAQLoader {
    */
   renderHeader() {
     const headerTitle = document.querySelector('.policies-page-title');
-    const headerSubtitle = document.querySelector('.policies-header p');
+    const headerSubtitle = document.querySelector('.policies-intro');
     
     if (headerTitle) headerTitle.textContent = this.data.pageTitle;
     if (headerSubtitle) headerSubtitle.textContent = this.data.pageSubtitle;
@@ -76,11 +76,12 @@ class FAQLoader {
 
     sidebarNav.innerHTML = '';
 
-    this.data.categories.forEach(category => {
+    this.data.categories.forEach((category, index) => {
+      const categoryNumber = index + 1;
       const link = document.createElement('a');
       link.href = `#category-${category.id}`;
       link.className = 'sidebar-link';
-      link.innerHTML = `<strong>${category.id}.</strong> ${category.title}`;
+      link.innerHTML = `<strong>${categoryNumber}.</strong> ${category.title}`;
       sidebarNav.appendChild(link);
     });
   }
@@ -89,19 +90,18 @@ class FAQLoader {
    * Render FAQ content sections
    */
   renderContent() {
-    const mainContent = document.querySelector('.policies-main .policy-section');
-    if (!mainContent) return;
-
-    // Clear existing content but keep the title
-    const sectionTitle = mainContent.querySelector('.policy-section-title');
-    mainContent.innerHTML = '';
-    if (sectionTitle) {
-      mainContent.appendChild(sectionTitle);
+    const mainContent = document.querySelector('#faq-content');
+    if (!mainContent) {
+      console.error('FAQ content container not found');
+      return;
     }
 
+    // Clear loading state
+    mainContent.innerHTML = '';
+
     // Render each category
-    this.data.categories.forEach(category => {
-      const categoryDiv = this.createCategoryElement(category);
+    this.data.categories.forEach((category, categoryIndex) => {
+      const categoryDiv = this.createCategoryElement(category, categoryIndex + 1);
       mainContent.appendChild(categoryDiv);
     });
   }
@@ -109,7 +109,7 @@ class FAQLoader {
   /**
    * Create a category element with all its questions
    */
-  createCategoryElement(category) {
+  createCategoryElement(category, categoryNumber) {
     const categoryDiv = document.createElement('div');
     categoryDiv.id = `category-${category.id}`;
     categoryDiv.className = 'faq-category';
@@ -117,12 +117,13 @@ class FAQLoader {
     // Category title
     const categoryTitle = document.createElement('h3');
     categoryTitle.className = 'faq-category-title';
-    categoryTitle.innerHTML = `<strong style="color: #2a7ae2;">Category ${category.id}:</strong> ${category.title}`;
+    categoryTitle.innerHTML = `<strong>Category ${categoryNumber}:</strong> ${category.title}`;
     categoryDiv.appendChild(categoryTitle);
 
     // Add all questions
-    category.questions.forEach(question => {
-      const questionDiv = this.createQuestionElement(question);
+    category.questions.forEach((question, questionIndex) => {
+      const questionNumber = `${categoryNumber}.${questionIndex + 1}`;
+      const questionDiv = this.createQuestionElement(question, questionNumber);
       categoryDiv.appendChild(questionDiv);
     });
 
@@ -132,7 +133,7 @@ class FAQLoader {
   /**
    * Create a question element
    */
-  createQuestionElement(question) {
+  createQuestionElement(question, questionNumber) {
     const questionDiv = document.createElement('div');
     questionDiv.className = 'faq-item';
     questionDiv.setAttribute('data-question-id', question.id);
@@ -140,7 +141,7 @@ class FAQLoader {
     // Question heading
     const questionHeading = document.createElement('h4');
     questionHeading.className = 'faq-question';
-    questionHeading.innerHTML = `<strong style="color: #2a7ae2;">${question.id}</strong> ${question.question}`;
+    questionHeading.innerHTML = `<strong>${questionNumber}</strong> ${question.question}`;
     questionDiv.appendChild(questionHeading);
 
     // Answer paragraph
