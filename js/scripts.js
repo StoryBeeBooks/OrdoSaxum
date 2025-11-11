@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initialize display carousel
   initializeDisplayCarousel();
+  
+  // Initialize slab quote scroll effect
+  initializeSlabQuote();
 });
 
 /**
@@ -895,3 +898,49 @@ window.addEventListener('resize', () => {
     });
   }, 250);
 });
+
+/* ============================================
+   SLAB QUOTE SCROLL EFFECT
+   ============================================ */
+
+function initializeSlabQuote() {
+  const slabQuote = document.querySelector('.slab-quote');
+  const slabImage = document.querySelector('.slab-image');
+  
+  if (!slabQuote || !slabImage) return;
+  
+  function updateQuoteVisibility() {
+    const imageRect = slabImage.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const windowCenter = windowHeight / 2;
+    
+    // Calculate image center position relative to viewport
+    const imageCenter = imageRect.top + (imageRect.height / 2);
+    
+    // Calculate distance from image center to window center
+    const distanceFromCenter = Math.abs(imageCenter - windowCenter);
+    
+    // Maximum distance for full opacity (adjust for desired effect range)
+    const maxDistance = windowHeight / 3;
+    
+    // Calculate opacity based on distance (closer to center = more visible)
+    let opacity = 1 - (distanceFromCenter / maxDistance);
+    opacity = Math.max(0, Math.min(1, opacity)); // Clamp between 0 and 1
+    
+    // Apply opacity
+    slabQuote.style.opacity = opacity;
+    
+    // Add visible class for additional effects if needed
+    if (opacity > 0.3) {
+      slabQuote.classList.add('visible');
+    } else {
+      slabQuote.classList.remove('visible');
+    }
+  }
+  
+  // Update on scroll
+  window.addEventListener('scroll', updateQuoteVisibility);
+  
+  // Initial check
+  updateQuoteVisibility();
+}

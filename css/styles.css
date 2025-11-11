@@ -379,6 +379,176 @@ main {
   font-weight: 300;
 }
 
+/* Slab Quote Overlay */
+.slab-quote {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+  z-index: 10;
+  padding: 2vw;
+  max-width: 80%;
+}
+
+.slab-quote.visible {
+  opacity: 1;
+}
+
+.quote-text {
+  font-size: clamp(18px, 2.2vw, 32px);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1vw;
+  font-style: italic;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.quote-author {
+  font-size: clamp(12px, 1.3vw, 20px);
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   CTA SECTION (Our Products and Services)
+   ============================================ */
+
+.cta-section {
+  padding: 100px 80px;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 50%, #fafafa 100%);
+}
+
+.cta-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 32px;
+  font-weight: 300;
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.cta-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cta-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.cta-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.cta-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.cta-card:hover .cta-image img {
+  transform: scale(1.1);
+}
+
+.cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+.cta-card:hover .cta-overlay {
+  opacity: 0.8;
+}
+
+.cta-content {
+  padding: 30px 25px;
+  text-align: center;
+}
+
+.cta-card-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.cta-description {
+  font-size: 14px;
+  font-weight: 300;
+  color: #666666;
+  line-height: 1.6;
+}
+
+/* Responsive CTA Section */
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 60px 40px;
+  }
+
+  .cta-title {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+
+  .cta-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cta-image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 50px 20px;
+  }
+
+  .cta-title {
+    font-size: 22px;
+  }
+
+  .cta-image {
+    height: 220px;
+  }
+}
+
 /* ============================================
    SLAB VARIATIONS CAROUSEL
    ============================================ */
@@ -586,11 +756,18 @@ main {
 
 .masonry-text {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 80px auto;
   font-size: 1.1rem;
   line-height: 1.8;
   color: #1a1a1a;
   font-weight: 300;
+}
+
+/* Carousel inside Masonry Section */
+.masonry-animation-section .carousel-container {
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* ============================================
@@ -1003,25 +1180,36 @@ footer {
   }
 
   .carousel-wrapper {
-    padding: 0 40px;
+    padding: 0 20px;
   }
 
   .carousel-track {
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 15px;
   }
 
   .carousel-slide {
-    min-width: calc(50% - 5px);
-    max-width: calc(50% - 5px);
+    min-width: calc(50% - 7.5px);
+    max-width: calc(50% - 7.5px);
   }
   
   .carousel-track-container {
-    overflow: visible;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .carousel-track-container::-webkit-scrollbar {
+    display: none;
   }
   
   .carousel-arrow {
     display: none;
+  }
+
+  .masonry-animation-section .carousel-container {
+    margin-top: 40px;
+    padding-top: 40px;
   }
 
   .footer-content {
@@ -1066,6 +1254,28 @@ footer {
 
   .nav-link {
     padding: 15px 10px;
+  }
+
+  .carousel-wrapper {
+    padding: 0 15px;
+  }
+
+  .carousel-track {
+    gap: 12px;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .masonry-text {
+    margin-bottom: 50px;
+  }
+
+  .masonry-animation-section .carousel-container {
+    margin-top: 30px;
+    padding-top: 30px;
   }
 }
 

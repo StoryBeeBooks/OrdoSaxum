@@ -51,15 +51,88 @@
         </p>
       </div>
       <div class="slab-image">
-  <img src="Image Assets/Fireplace/fireplace12.jpeg" alt="Stone Slab Design" class="slab-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <img src="Image Assets/Fireplace/fireplace12.jpeg" alt="Stone Slab Design" class="slab-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <div class="slab-placeholder" style="display: none;">DESIGN INSPIRATION</div>
+        <div class="slab-quote">
+          <p class="quote-text">"The family is one of nature's masterpieces."</p>
+          <p class="quote-author">— George Santayana</p>
+        </div>
         <p class="slab-caption">Fireplace - The Memory of Growing Up</p>
       </div>
     </div>
   </section>
 
-  <!-- SLAB VARIATIONS CAROUSEL -->
-  <section class="carousel-section">
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Our Products and Services</h2>
+      <div class="cta-grid">
+        <a href="natural-stone.html" class="cta-card">
+          <div class="cta-image">
+            <img src="Image Assets/Natural Stone/Stone Products/Granite.jpg" alt="Natural Stone Slabs">
+            <div class="cta-overlay"></div>
+          </div>
+          <div class="cta-content">
+            <h3 class="cta-card-title">Purchase Natural Stone Slabs</h3>
+            <p class="cta-description">Marble, Granite, Quartzite & More</p>
+          </div>
+        </a>
+
+        <a href="sintered-stone.html" class="cta-card">
+          <div class="cta-image">
+            <img src="Image Assets/Slabs/Bernini.jpg" alt="Sintered Stone Slabs">
+            <div class="cta-overlay"></div>
+          </div>
+          <div class="cta-content">
+            <h3 class="cta-card-title">Purchase Sintered Stone Slabs</h3>
+            <p class="cta-description">Engineered Excellence & Beauty</p>
+          </div>
+        </a>
+
+        <a href="fabrication.html" class="cta-card">
+          <div class="cta-image">
+            <img src="Image Assets/Fabrication Images/fabrication1.jpg" alt="Home Renovation">
+            <div class="cta-overlay"></div>
+          </div>
+          <div class="cta-content">
+            <h3 class="cta-card-title">Home Renovation</h3>
+            <p class="cta-description">Professional Fabrication Services</p>
+          </div>
+        </a>
+
+        <a href="index.html#furniture-section" class="cta-card">
+          <div class="cta-image">
+            <img src="Image Assets/Dining Table/dining1.jpg" alt="Customized Furniture">
+            <div class="cta-overlay"></div>
+          </div>
+          <div class="cta-content">
+            <h3 class="cta-card-title">Purchase Customized Furniture</h3>
+            <p class="cta-description">Bespoke Stone Furniture Pieces</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STONE MASONRY ANIMATION SECTION -->
+  <section class="masonry-animation-section">
+    <div class="masonry-container">
+      <div class="masonry-content">
+        <h2 class="masonry-title">Crafted to Perfection</h2>
+        <p class="masonry-subtitle">Where Nature Meets Artistry</p>
+      </div>
+      
+      <div class="stone-blocks-animation" id="stoneBlocksAnimation">
+        <!-- Three.js 3D animation canvas -->
+        <canvas id="canvas3d"></canvas>
+      </div>
+      
+      <div class="masonry-text">
+        <p>We transform premium natural stone and sintered slabs into stunning countertops that elevate your space. From selection to installation, every detail is crafted with precision and expertise.</p>
+      </div>
+    </div>
+
+    <!-- SLAB VARIATIONS CAROUSEL -->
     <div class="carousel-container">
       <div class="carousel-wrapper">
         <button class="carousel-arrow carousel-prev" onclick="slideCarousel(-1)">
@@ -138,25 +211,6 @@
     </div>
   </section>
 
-  <!-- STONE MASONRY ANIMATION SECTION -->
-  <section class="masonry-animation-section">
-    <div class="masonry-container">
-      <div class="masonry-content">
-        <h2 class="masonry-title">Crafted to Perfection</h2>
-        <p class="masonry-subtitle">Where Nature Meets Artistry</p>
-      </div>
-      
-      <div class="stone-blocks-animation" id="stoneBlocksAnimation">
-        <!-- Three.js 3D animation canvas -->
-        <canvas id="canvas3d"></canvas>
-      </div>
-      
-      <div class="masonry-text">
-        <p>We transform premium natural stone and sintered slabs into stunning countertops that elevate your space. From selection to installation, every detail is crafted with precision and expertise.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- DISPLAY SECTION -->
   <section class="display-section">
     <div class="display-carousel">
@@ -208,7 +262,7 @@
   </section>
 
   <!-- FURNITURE VARIATIONS SECTION -->
-  <section class="furniture-section">
+  <section class="furniture-section" id="furniture-section">
     <div class="furniture-container">
       
       <!-- Beautiful Offices Carousel -->
