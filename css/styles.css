@@ -441,7 +441,7 @@ main {
 
 .cta-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px;
 }
 
@@ -515,6 +515,13 @@ main {
 }
 
 /* Responsive CTA Section */
+@media (max-width: 1024px) {
+  .cta-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .cta-section {
     padding: 60px 40px;
@@ -526,8 +533,8 @@ main {
   }
 
   .cta-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 
   .cta-image {
@@ -539,13 +546,26 @@ main {
   .cta-section {
     padding: 50px 20px;
   }
-
-  .cta-title {
-    font-size: 22px;
+  
+  .cta-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   .cta-image {
-    height: 220px;
+    height: 200px;
+  }
+  
+  .cta-content {
+    padding: 20px 15px;
+  }
+  
+  .cta-card-title {
+    font-size: 16px;
+  }
+  
+  .cta-description {
+    font-size: 12px;
   }
 }
 
