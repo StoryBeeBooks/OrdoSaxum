@@ -74,41 +74,63 @@ document.addEventListener('DOMContentLoaded', function() {
   const newsletterForm = document.getElementById('newsletterForm');
   
   if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(event) {
+    newsletterForm.addEventListener('submit', async function(event) {
       event.preventDefault();
       
-      // Get form values
-      const userType = document.getElementById('userType').value;
-      const emailAddress = document.getElementById('emailAddress').value;
-      const emailConsent = document.getElementById('emailConsent').checked;
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText = submitBtn.querySelector('.btn-text');
+      const btnLoading = submitBtn.querySelector('.btn-loading');
+      const formMessage = document.getElementById('formMessage');
       
-      // Validate
-      if (!userType || !emailAddress || !emailConsent) {
-        alert('Please fill in all required fields and accept the terms.');
-        return;
+      // Show loading state
+      submitBtn.disabled = true;
+      btnText.style.display = 'none';
+      btnLoading.style.display = 'inline';
+      formMessage.style.display = 'none';
+      
+      // Get form data
+      const formData = new FormData(newsletterForm);
+      
+      try {
+        // Submit to Web3Forms
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          // Success message
+          formMessage.textContent = 'Thank you for subscribing! Check your email for confirmation.';
+          formMessage.className = 'form-message form-message-success';
+          formMessage.style.display = 'block';
+          
+          // Reset form
+          newsletterForm.reset();
+          
+          // Close modal after 3 seconds
+          setTimeout(function() {
+            closeNewsletterModal();
+            formMessage.style.display = 'none';
+          }, 3000);
+          
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+        
+      } catch (error) {
+        // Error message
+        formMessage.textContent = 'Oops! Something went wrong. Please try again or email us directly at info@ordosaxum.ca';
+        formMessage.className = 'form-message form-message-error';
+        formMessage.style.display = 'block';
+        
+      } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        btnText.style.display = 'inline';
+        btnLoading.style.display = 'none';
       }
-      
-      // Create email body
-      const subject = encodeURIComponent('Newsletter Subscription Request');
-      const body = encodeURIComponent(
-        `New Newsletter Subscription\n\n` +
-        `User Type: ${userType}\n` +
-        `Email Address: ${emailAddress}\n` +
-        `Consent Given: Yes\n\n` +
-        `Please add this subscriber to the newsletter mailing list.`
-      );
-      
-      // Open default email client
-      window.location.href = `mailto:info@ordosaxum.ca?subject=${subject}&body=${body}`;
-      
-      // Show success message
-      alert('Thank you for subscribing! Your email client will open to send your subscription request.');
-      
-      // Close modal and set cookie
-      closeNewsletterModal();
-      
-      // Reset form
-      newsletterForm.reset();
     });
   }
   

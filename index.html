@@ -601,33 +601,46 @@
           </div>
         </div>
         <div class="newsletter-form-section">
-          <form id="newsletterForm" class="newsletter-form">
+          <form id="newsletterForm" class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms Access Key - Replace with your own from https://web3forms.com -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            
+            <!-- Email Configuration -->
+            <input type="hidden" name="subject" value="New Newsletter Subscription - OrdoSaxum">
+            <input type="hidden" name="from_name" value="OrdoSaxum Newsletter">
+            <input type="hidden" name="redirect" value="false">
+            
             <div class="form-group">
               <label for="userType">I am a*</label>
-              <select id="userType" name="userType" required>
+              <select id="userType" name="user_type" required>
                 <option value="">Select...</option>
-                <option value="homeowner">Homeowner</option>
-                <option value="designer">Interior Designer</option>
-                <option value="architect">Architect</option>
-                <option value="contractor">Contractor</option>
-                <option value="developer">Developer</option>
-                <option value="other">Other</option>
+                <option value="Homeowner">Homeowner</option>
+                <option value="Interior Designer">Interior Designer</option>
+                <option value="Architect">Architect</option>
+                <option value="Contractor">Contractor</option>
+                <option value="Developer">Developer</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             
             <div class="form-group">
               <label for="emailAddress">Email address*</label>
-              <input type="email" id="emailAddress" name="emailAddress" required placeholder="your@email.com">
+              <input type="email" id="emailAddress" name="email" required placeholder="your@email.com">
             </div>
             
             <div class="form-group-checkbox">
-              <input type="checkbox" id="emailConsent" name="emailConsent" required>
+              <input type="checkbox" id="emailConsent" name="consent" value="Yes" required>
               <label for="emailConsent">Yes, sign me up to receive email communications from OrdoSaxum about products, news, and events. I understand I can unsubscribe at any time.</label>
             </div>
             
             <p class="newsletter-terms">By visiting this website, you acknowledge and agree to our website <a href="policies/private-policy.html" target="_blank">Privacy Policy</a> and <a href="policies/terms-of-use.html" target="_blank">Terms of Use</a></p>
             
-            <button type="submit" class="newsletter-submit-btn">Join →</button>
+            <button type="submit" class="newsletter-submit-btn" id="submitBtn">
+              <span class="btn-text">Join →</span>
+              <span class="btn-loading" style="display: none;">Sending...</span>
+            </button>
+            
+            <div id="formMessage" class="form-message" style="display: none;"></div>
           </form>
         </div>
       </div>
