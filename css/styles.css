@@ -1050,6 +1050,20 @@ footer {
   flex-wrap: nowrap;
 }
 
+.footer-copyright {
+  color: #4a4a4a;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-copyright:hover {
+  color: #000000;
+}
+
 .footer-section {
   display: flex;
   gap: 0;
@@ -1105,19 +1119,6 @@ footer {
 }
 
 .footer-contact strong a {
-  color: #000000;
-}
-
-.footer-copyright {
-  color: #4a4a4a;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 400;
-  transition: color 0.3s ease;
-}
-
-.footer-copyright:hover {
   color: #000000;
 }
 
