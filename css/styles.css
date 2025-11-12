@@ -2445,8 +2445,10 @@ footer {
   
   /* Newsletter Modal - Landscape */
   .newsletter-modal-content {
-    max-height: 92vh;
+    max-width: 800px;
+    max-height: 75vh;
     overflow-y: auto;
+    transform: scale(0.8);
   }
   
   .newsletter-grid {
@@ -2459,26 +2461,29 @@ footer {
   }
   
   .newsletter-overlay {
-    padding: 25px 30px;
+    padding: 20px 25px;
   }
   
   .newsletter-title {
-    font-size: clamp(24px, 4vw, 32px);
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 8px;
   }
   
   .newsletter-description {
-    font-size: 12px;
-    line-height: 1.5;
-    max-width: 300px;
+    font-size: 11px;
+    line-height: 1.4;
+    max-width: 250px;
   }
   
   .newsletter-close {
-    font-size: 36px;
-    width: 36px;
-    height: 36px;
-    right: 15px;
-    top: 15px;
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    right: 12px;
+    top: 12px;
+    color: #000000;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
   }
   
   .newsletter-form-section {
@@ -2806,7 +2811,9 @@ footer {
   
   /* Newsletter Modal - Very Small Landscape */
   .newsletter-modal-content {
-    max-height: 95vh;
+    max-width: 720px;
+    max-height: 70vh;
+    transform: scale(0.8);
   }
   
   .newsletter-grid {
@@ -2814,27 +2821,32 @@ footer {
   }
   
   .newsletter-title {
-    font-size: clamp(20px, 3.5vw, 26px);
-    margin-bottom: 8px;
+    font-size: 20px;
+    margin-bottom: 6px;
   }
   
   .newsletter-description {
-    font-size: 11px;
-    max-width: 250px;
+    font-size: 10px;
+    max-width: 220px;
   }
   
   .newsletter-overlay {
-    padding: 20px 25px;
+    padding: 18px 22px;
   }
   
   .newsletter-form-section {
-    padding: 20px 25px;
+    padding: 18px 22px;
   }
   
   .newsletter-close {
-    font-size: 32px;
-    width: 32px;
-    height: 32px;
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+    right: 10px;
+    top: 10px;
+    color: #000000;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
   }
   
   .form-group {
