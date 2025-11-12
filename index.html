@@ -62,7 +62,7 @@
   <section class="cta-section">
     <div class="cta-container">
       <h2 class="cta-title">Our Products and Services</h2>
-      <p class="cta-subtitle">Remember to ask us about first-time customer discounts! <a href="contact.html" class="cta-subtitle-link">Subscribe to our newsletter</a></p>
+      <p class="cta-subtitle">Remember to ask us about first-time customer discounts! <a href="#newsletter" class="cta-subtitle-link">Subscribe to our newsletter</a></p>
       <div class="cta-grid">
         <a href="natural-stone.html" class="cta-card">
           <div class="cta-image">
@@ -588,7 +588,54 @@
 
   <div id="footer-placeholder"></div>
 
+  <!-- NEWSLETTER POPUP MODAL -->
+  <div id="newsletterModal" class="newsletter-modal">
+    <div class="newsletter-modal-content">
+      <button class="newsletter-close" onclick="closeNewsletterModal()">&times;</button>
+      <div class="newsletter-grid">
+        <div class="newsletter-image-section">
+          <img src="Image Assets/Natural Stone/natural1.jpeg" alt="Natural Stone" class="newsletter-bg-image">
+          <div class="newsletter-overlay">
+            <h2 class="newsletter-title">Join Our<br>Newsletter</h2>
+            <p class="newsletter-description">Get great content you'll find useful and inspiring</p>
+          </div>
+        </div>
+        <div class="newsletter-form-section">
+          <form id="newsletterForm" class="newsletter-form">
+            <div class="form-group">
+              <label for="userType">I am a*</label>
+              <select id="userType" name="userType" required>
+                <option value="">Select...</option>
+                <option value="homeowner">Homeowner</option>
+                <option value="designer">Interior Designer</option>
+                <option value="architect">Architect</option>
+                <option value="contractor">Contractor</option>
+                <option value="developer">Developer</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="emailAddress">Email address*</label>
+              <input type="email" id="emailAddress" name="emailAddress" required placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group-checkbox">
+              <input type="checkbox" id="emailConsent" name="emailConsent" required>
+              <label for="emailConsent">Yes, sign me up to receive email communications from OrdoSaxum about products, news, and events. I understand I can unsubscribe at any time.</label>
+            </div>
+            
+            <p class="newsletter-terms">By visiting this website, you acknowledge and agree to our website <a href="policies/private-policy.html" target="_blank">Privacy Policy</a> and <a href="policies/terms-of-use.html" target="_blank">Terms of Use</a></p>
+            
+            <button type="submit" class="newsletter-submit-btn">Join →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
   <script src="js/scripts.js?v=2"></script>
+  <script src="js/newsletter.js"></script>
 </body>
 </html>
