@@ -1,7 +1,11 @@
 // Sintered Stone Page JavaScript - Interactive Hero Canvas
 
 document.addEventListener('DOMContentLoaded', function() {
-  initInteractiveHero();
+  // Check if canvas exists before initializing (now using video instead)
+  const canvas = document.getElementById('heroCanvas');
+  if (canvas) {
+    initInteractiveHero();
+  }
 });
 
 function initInteractiveHero() {
