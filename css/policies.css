@@ -81,20 +81,22 @@
 }
 
 .breadcrumb {
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 2px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
   color: #666666;
   margin-bottom: 15px;
   text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
 }
 
 .policies-page-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 300;
   color: #1a1a1a;
   margin: 0;
-  letter-spacing: 0;
+  letter-spacing: 1px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
 /* Layout */
@@ -115,11 +117,13 @@
 }
 
 .policies-intro {
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.9;
   color: #1a1a1a;
   margin: 0 0 20px 0;
   font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 /* Policy Section */
@@ -133,11 +137,13 @@
 }
 
 .policy-section p {
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.9;
   color: #1a1a1a;
   margin-bottom: 20px;
   font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .policy-section p:last-child {
@@ -151,11 +157,13 @@
 }
 
 .policy-section li {
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.9;
   color: #1a1a1a;
   margin-bottom: 12px;
   font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .policy-section li:last-child {
@@ -168,31 +176,35 @@
 }
 
 .policy-title {
-  font-size: 18px;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 25px;
-  letter-spacing: 0;
+  letter-spacing: 0.5px;
   padding-left: 0;
-  line-height: 1.4;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Policy Text */
 .policy-text {
   color: #1a1a1a;
-  line-height: 1.8;
-  font-size: 14px;
+  line-height: 1.9;
+  font-size: 15px;
   font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .policy-text h3 {
-  font-size: 16px;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #1a1a1a;
   margin-top: 30px;
   margin-bottom: 15px;
-  letter-spacing: 0;
-  line-height: 1.4;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
 }
 
 .policy-text h3:first-child {
@@ -201,8 +213,9 @@
 
 .policy-text p {
   margin-bottom: 20px;
-  line-height: 1.8;
+  line-height: 1.9;
   font-weight: 400;
+  letter-spacing: 0.3px;
 }
 
 .policy-text p:last-child {
@@ -217,8 +230,9 @@
 
 .policy-text li {
   margin-bottom: 12px;
-  line-height: 1.8;
+  line-height: 1.9;
   font-weight: 400;
+  letter-spacing: 0.3px;
 }
 
 .policy-text li:last-child {
@@ -262,9 +276,10 @@
   text-decoration: none;
   font-style: italic;
   transition: opacity 0.3s ease;
-  line-height: 1.6;
+  line-height: 1.7;
   display: inline-block;
   cursor: pointer;
+  font-family: 'Inter', sans-serif;
 }
 
 .sidebar-link:hover {

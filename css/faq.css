@@ -37,14 +37,15 @@
 }
 
 .faq-category-title {
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 500;
   color: #1a1a1a;
   margin-bottom: 30px;
   padding-bottom: 15px;
   border-bottom: 3px solid #666666;
   transition: color 0.3s ease;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.5px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
 .faq-category-title strong {
@@ -78,11 +79,13 @@
   font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 12px;
-  line-height: 1.5;
+  line-height: 1.6;
   cursor: default;
   display: flex;
   align-items: flex-start;
   gap: 10px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .faq-question strong {
@@ -95,11 +98,13 @@
 
 /* Answer Styling */
 .faq-answer {
-  font-size: 0.95rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.9;
   color: #555;
   margin: 0;
   padding-left: 55px; /* Align with question text after number */
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .faq-answer br {
@@ -122,8 +127,10 @@
   text-decoration: none;
   border-left: 3px solid transparent;
   transition: all 0.3s ease;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .sidebar-link:hover {
@@ -148,13 +155,14 @@
 
 /* Sidebar Title */
 .sidebar-title {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 2px solid #666666;
   letter-spacing: 0.5px;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Search Box (for future enhancement) */
@@ -173,6 +181,8 @@
   border: 2px solid #ddd;
   border-radius: 4px;
   transition: border-color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .faq-search-input:focus {
@@ -197,6 +207,8 @@
   color: #666;
   font-size: 1rem;
   margin: 0;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .loading-state::after {
@@ -228,6 +240,8 @@
 .faq-error h2 {
   color: #e65100;
   margin-bottom: 12px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 /* Highlight for search results (future enhancement) */

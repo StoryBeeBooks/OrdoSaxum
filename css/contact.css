@@ -32,12 +32,13 @@
 }
 
 .contact-page-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 300;
   text-align: center;
   margin-bottom: 60px;
   color: #1a1a1a;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
 /* Location Section */
@@ -62,12 +63,13 @@
 }
 
 .location-country {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: #1a1a1a;
   margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .toggle-icon {
@@ -117,9 +119,10 @@
 .location-office {
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: #1a1a1a;
   margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .toggle-icon-small {
@@ -147,7 +150,8 @@
 .location-info {
   padding: 30px 40px;
   color: #4a4a4a;
-  line-height: 1.8;
+  line-height: 1.9;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Info Row Structure */
@@ -163,20 +167,23 @@
 
 .info-label {
   min-width: 110px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: #1a1a1a;
   text-transform: uppercase;
   padding-top: 2px;
   flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .info-content {
   flex: 1;
-  font-size: 14px;
+  font-size: 15px;
   color: #4a4a4a;
-  line-height: 1.8;
+  line-height: 1.9;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .info-content a {
@@ -198,11 +205,13 @@
 
 .hours-list li {
   padding: 6px 0;
-  font-size: 13px;
+  font-size: 14px;
   color: #4a4a4a;
   display: flex;
   align-items: center;
   gap: 10px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .hours-list .day {
@@ -222,7 +231,8 @@
 .coming-soon {
   color: #999999;
   font-style: italic;
-  font-size: 13px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Responsive */

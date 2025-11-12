@@ -59,12 +59,12 @@
 }
 
 .fabrication-hero-title {
-  font-size: 2rem;
+  font-size: 3.5rem;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.2;
   margin: 0;
-  letter-spacing: 0px;
-  font-family: Georgia, serif;
+  letter-spacing: 2px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   color: #ffffff;
   text-transform: uppercase;
 }
@@ -88,19 +88,22 @@
 }
 
 .manifesto-heading {
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: #666666;
   margin-bottom: 30px;
+  font-family: 'Inter', sans-serif;
 }
 
 .manifesto-description {
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.9;
   color: #1a1a1a;
   font-weight: 300;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .manifesto-image {
@@ -118,10 +121,12 @@
 }
 
 .manifesto-caption {
-  font-size: 11px;
+  font-size: 10px;
   color: #1a1a1a;
   margin-top: 15px;
-  font-weight: 300;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 1px;
 }
 
 /* SECTION 3: DIGITAL ATELIER */
@@ -138,13 +143,14 @@
 }
 
 .atelier-heading {
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: #999999;
   margin: 0 0 60px 0;
   text-align: left;
+  font-family: 'Inter', sans-serif;
 }
 
 .atelier-content {
@@ -181,11 +187,12 @@
 }
 
 .atelier-instruction {
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
 }
 
 .atelier-text {
@@ -193,11 +200,13 @@
 }
 
 .atelier-text p {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.9;
   color: #ffffff;
   margin: 0;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 /* SECTION 4: PORTFOLIO GALLERY */
@@ -213,13 +222,14 @@
 }
 
 .portfolio-title {
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: #666666;
   text-align: left;
   margin: 0 0 40px 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .portfolio-filters {
@@ -232,9 +242,9 @@
 
 .portfolio-filter {
   padding: 10px 20px;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-transform: uppercase;
   border: none;
   border-bottom: 1px solid transparent;
@@ -242,6 +252,7 @@
   color: #666666;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
 }
 
 .portfolio-filter:hover {
@@ -309,6 +320,7 @@
   letter-spacing: 0.5px;
   color: #ffffff;
   margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 /* SECTION 5: CONSCIOUS CRAFTSMANSHIP */
@@ -324,23 +336,26 @@
 }
 
 .craftsmanship-title {
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: #666666;
   text-align: left;
   margin: 0 0 20px 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .craftsmanship-subtitle {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.9;
   color: #1a1a1a;
   text-align: left;
   margin: 0 0 80px 0;
   max-width: 100%;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .craftsmanship-grid {
@@ -363,21 +378,24 @@
 }
 
 .craftsmanship-heading {
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0 0 20px 0;
   color: #666666;
+  font-family: 'Inter', sans-serif;
 }
 
 .craftsmanship-text {
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.9;
   color: #1a1a1a;
   font-weight: 300;
   margin: 0;
   text-align: left;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 /* SECTION 6: INVITATION */
@@ -393,13 +411,14 @@
 }
 
 .invitation-main-title {
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: #666666;
   text-align: left;
   margin: 0 0 60px 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .invitation-grid {
@@ -441,28 +460,31 @@
 }
 
 .invitation-card-title {
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #666666;
   margin: 0 0 20px 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .invitation-card-text {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.9;
   color: #1a1a1a;
   margin: 0 0 30px 0;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .invitation-cta {
   display: inline-block;
   padding: 10px 0;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-transform: uppercase;
   background: transparent;
   color: #1a1a1a;
@@ -470,6 +492,7 @@
   border: none;
   border-bottom: 1px solid #1a1a1a;
   transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
 }
 
 .invitation-cta:hover {
