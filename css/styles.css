@@ -268,11 +268,11 @@ main {
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: 3.5rem;
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 24px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: #ffffff;
   text-transform: none;
 }
@@ -1353,7 +1353,7 @@ footer {
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 
   .products-grid {
@@ -2148,7 +2148,7 @@ footer {
   }
   
   .hero-title {
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-size: 2rem;
     margin-bottom: 12px;
     line-height: 1.2;
   }
@@ -2556,7 +2556,7 @@ footer {
   }
   
   .hero-title {
-    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+    font-size: 1.6rem;
     margin-bottom: 10px;
   }
   
