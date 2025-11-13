@@ -99,6 +99,10 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Get form data
       const formData = new FormData(newsletterForm);
+      const formObject = Object.fromEntries(formData);
+      
+      // Add hCaptcha response
+      formObject['h-captcha-response'] = hCaptchaResponse;
       
       try {
         // Submit to Web3Forms
@@ -108,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
-          body: JSON.stringify(Object.fromEntries(formData))
+          body: JSON.stringify(formObject)
         });
         
         const data = await response.json();
