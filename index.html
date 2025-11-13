@@ -604,9 +604,12 @@
           </div>
         </div>
         <div class="newsletter-form-section">
-          <form id="newsletterForm" class="newsletter-form">
+          <form id="newsletterForm" class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
             <!-- Web3Forms Access Key -->
             <input type="hidden" name="access_key" value="6fa0bbb3-58d8-4651-8a0d-dba12be60555">
+            
+            <!-- Redirect after submission -->
+            <input type="hidden" name="redirect" value="https://ordosaxum.ca/?newsletter=success">
             
             <!-- Honeypot Spam Protection -->
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
