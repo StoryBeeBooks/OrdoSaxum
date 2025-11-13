@@ -463,28 +463,30 @@ main {
 .cta-subtitle {
   font-family: var(--font-sans);
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 300;
   text-align: center;
-  color: #8B4513;
+  color: #999999;
   margin: -50px auto 60px;
-  letter-spacing: 0.3px;
+  letter-spacing: 2.5px;
   line-height: 1.6;
   max-width: 600px;
-  font-style: italic;
+  font-style: normal;
+  text-transform: uppercase;
 }
 
 .cta-subtitle-link {
-  color: #6B2C2C;
-  font-weight: 500;
+  color: #666666;
+  font-weight: 400;
   text-decoration: none;
-  border-bottom: 1px solid #6B2C2C;
+  border-bottom: 1px solid #666666;
   transition: all 0.3s ease;
   font-style: normal;
+  letter-spacing: 2.5px;
 }
 
 .cta-subtitle-link:hover {
-  color: #8B4513;
-  border-bottom-color: #8B4513;
+  color: #333333;
+  border-bottom-color: #333333;
 }
 
 .cta-grid {
