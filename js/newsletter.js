@@ -95,12 +95,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Submit to Web3Forms
         const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          body: formData
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(Object.fromEntries(formData))
         });
         
         const data = await response.json();
         
-        if (data.success) {
+        if (response.ok && data.success) {
           // Success message
           formMessage.textContent = 'Thank you for subscribing! Check your email for confirmation.';
           formMessage.className = 'form-message form-message-success';
@@ -121,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
       } catch (error) {
         // Error message
+        console.error('Form submission error:', error);
         formMessage.textContent = 'Oops! Something went wrong. Please try again or email us directly at info@ordosaxum.ca';
         formMessage.className = 'form-message form-message-error';
         formMessage.style.display = 'block';
