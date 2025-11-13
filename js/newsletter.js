@@ -117,6 +117,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const data = await response.json();
         
+        // Log for debugging
+        console.log('Response status:', response.status);
+        console.log('Response data:', data);
+        
         if (response.ok && data.success) {
           // Success message
           formMessage.textContent = 'Thank you for subscribing! Check your email for confirmation.';
