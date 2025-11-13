@@ -1959,6 +1959,12 @@ footer {
   text-decoration: underline;
 }
 
+.h-captcha {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
 .newsletter-submit-btn {
   width: 100%;
   padding: 16px 32px;

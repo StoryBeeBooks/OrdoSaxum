@@ -82,6 +82,15 @@ document.addEventListener('DOMContentLoaded', function() {
       const btnLoading = submitBtn.querySelector('.btn-loading');
       const formMessage = document.getElementById('formMessage');
       
+      // Check hCaptcha
+      const hCaptcha = document.querySelector('.h-captcha textarea[name="h-captcha-response"]');
+      if (!hCaptcha || !hCaptcha.value) {
+        formMessage.textContent = 'Please complete the captcha verification.';
+        formMessage.className = 'form-message form-message-error';
+        formMessage.style.display = 'block';
+        return;
+      }
+      
       // Show loading state
       submitBtn.disabled = true;
       btnText.style.display = 'none';
