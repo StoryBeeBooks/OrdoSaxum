@@ -604,7 +604,7 @@
           </div>
         </div>
         <div class="newsletter-form-section">
-          <form id="newsletterForm" class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+          <form id="newsletterForm" class="newsletter-form">
             <!-- Web3Forms Access Key -->
             <input type="hidden" name="access_key" value="6fa0bbb3-58d8-4651-8a0d-dba12be60555">
             
@@ -640,9 +640,6 @@
             
             <p class="newsletter-terms">By visiting this website, you acknowledge and agree to our website <a href="policies/private-policy.html" target="_blank">Privacy Policy</a> and <a href="policies/terms-of-use.html" target="_blank">Terms of Use</a></p>
             
-            <!-- hCaptcha -->
-            <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
-            
             <button type="submit" class="newsletter-submit-btn" id="submitBtn">
               <span class="btn-text">Join →</span>
               <span class="btn-loading" style="display: none;">Sending...</span>
@@ -658,8 +655,5 @@
   <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
   <script src="js/scripts.js?v=2"></script>
   <script src="js/newsletter.js"></script>
-  
-  <!-- hCaptcha Script -->
-  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </body>
 </html>

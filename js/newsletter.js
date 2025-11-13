@@ -82,15 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const btnLoading = submitBtn.querySelector('.btn-loading');
       const formMessage = document.getElementById('formMessage');
       
-      // Check hCaptcha
-      const hCaptchaResponse = hcaptcha.getResponse();
-      if (!hCaptchaResponse) {
-        formMessage.textContent = 'Please complete the captcha verification.';
-        formMessage.className = 'form-message form-message-error';
-        formMessage.style.display = 'block';
-        return;
-      }
-      
       // Show loading state
       submitBtn.disabled = true;
       btnText.style.display = 'none';
@@ -100,9 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
       // Get form data
       const formData = new FormData(newsletterForm);
       const formObject = Object.fromEntries(formData);
-      
-      // Add hCaptcha response
-      formObject['h-captcha-response'] = hCaptchaResponse;
       
       try {
         // Submit to Web3Forms
